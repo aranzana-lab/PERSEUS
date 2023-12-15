@@ -1,6 +1,10 @@
-# _PERSEUS_
+<h1 align="center">
+  <img width="30px" src="/public/images/graphPed.png"> <strong><em>PERSEUS</em> </strong>
+<h1\>
+  
+----
 
-Perseus is a webtool for the interactive visualization of pedigrees represented as directed forced graph networks
+An interactive and intuitive web-based tool for pedigree visualization.
 
 ## How to run the app
 ### Web server
