@@ -1,0 +1,50 @@
+#image-controls,
+#new-image,
+.image-item {
+  margin: 2rem auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  border-radius: 6px;
+  text-align: center;
+}
+
+#image-profiles ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.image-item article {
+  display: flex;
+  align-items: center;
+}
+
+.image-item img {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.image-item h2 {
+  font-size: 1.25rem;
+  font-weight: normal;
+  margin: 0.5rem 1rem;
+  color: rgb(97, 92, 92);
+}
+
+#new-image {
+  text-align: left;
+}
+
+.form-control {
+  margin: 0.5rem 0;
+}
+
+#image-preview {
+  display: none; /*As default, the image preview is not shown.*/
+  width: 4.5rem;
+  height: 4.5rem;
+  object-fit: cover;
+  border-radius: 2rem;
+}

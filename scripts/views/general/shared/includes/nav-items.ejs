@@ -1,0 +1,63 @@
+<!-- EJS for the navigation bar -->
+<ul class="main-navs-links">
+  <img
+    class="closebtn"
+    src="<%=x.imageUrl %> "
+    onclick="closeNav()"
+    alt="close navigator"
+  />
+  <li class="home"><a href="/perseus/home">Home</a></li>
+  <li class="discover"><a href="/perseus/species">Discover Pedigrees</a></li>
+  <li class="about">
+    <a href="/perseus/project"
+      ><button class="dropdown-btn">
+        About The Project
+        <i class="fa fa-chevron-down"></i></button
+    ></a>
+    <div class="dropdown-container">
+      <a href="/perseus/project#h2-1"
+        >Overview &<br />
+        User guide</a
+      >
+      <a href="/perseus/project#h2-2">Methodology & Data Used</a>
+    </div>
+  </li>
+  <li class="group"><a href="/perseus/group">Who we are</a></li>
+  <li class="share">
+    <a href="">Follow & Share</a>
+    <section class="social">
+      <li>
+        <a href="https://www.facebook.com/CRAGENOMICA/" target="_blank"
+          ><img src="<%=facebook.imageUrl %> " alt="<%=facebook.name %> "
+        /></a>
+      </li>
+      <li>
+        <a href="https://www.instagram.com/aranzana_lab/" target="_blank"
+          ><img src="<%=instagram.imageUrl %> " alt="<%=instagram.name %> " />
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://twitter.com/CRAGENOMICA?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"
+          target="_blank"
+          ><img src="<%=twitter.imageUrl %> " alt="<%=twitter.name %> " />
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://www.linkedin.com/company/centre-de-recerca-en-agrigenomica/mycompany/"
+          target="_blank"
+          ><img src="<%=linkedin.imageUrl %> " alt="<%=linkedin.name %> " />
+        </a>
+      </li>
+    </section>
+  </li>
+  <% if (locals.isAuth) { %>
+  <li class="logout">
+    <form action="/perseus/logout" method="POST">
+      <input type="hidden" name="_csrf" value="<%=locals.csrfToken%>" />
+      <button id="btn_out">Log Out</button>
+    </form>
+  </li>
+  <% } %>
+</ul>

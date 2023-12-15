@@ -1,0 +1,12 @@
+<!-- Header of the website -->
+<header id="main-header">
+  <div><%- include('./logo-one', {graph}) %></div>
+  <div>
+    <%- include('./nav-items', {threeDots, x, facebook, instagram, twitter,
+    linkedin}) %>
+  </div>
+  <div class="burguer" onclick="openNav()">
+    <img src="<%=threeDots.imageUrl %> " alt="open navigator" />
+  </div>
+  <script src="/perseus/scripts/header.js" defer></script>
+</header>

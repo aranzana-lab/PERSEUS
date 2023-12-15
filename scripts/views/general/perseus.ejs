@@ -1,0 +1,137 @@
+<%- include('./shared/includes/head', { pageTitle: 'PERSEUS'}) %>
+  <link rel="stylesheet" href="/perseus/styles/logo.css">
+  <link rel="stylesheet" href="/perseus/styles/perseus.css">
+</head>
+
+<body>
+  <%- include('./shared/includes/header', {graph, threeDots, x, facebook, instagram, twitter, linkedin}) %>
+  <%- include('./shared/includes/video') %>
+  <main id="main1">
+    <h1 class="titlemain"><em>PERSEUS</em></h1>
+    <p class="subtitle">Pedigree Network</p>
+    <div id="project">
+      <div id="intro">
+        <p class="project-summary">Pedigree data is of crucial relevance in research studies and breeding.</p>
+        <p class="project-summary">
+        <strong><em>PERSEUS</em></strong> takes the next step leap forward. 
+        Made for breeders and researchers, it features pedigree visualizations thorught a user-friendly and interactive graph network.
+        </p>
+        <p class="project-summary">The pedigrees rendered within this website tool have been retrieved from published works. In addition, passport data containing traits of relevance for each cultivar or accession are rendered alongside the graphs.</p>
+      </div>
+      <div class="pedigrees">
+        <div class="peach-access">
+        <li class="peach-summary"><p>Explore the <strong class="peach-word">FRUIT </strong><strong>pedigree visualizations</strong> already available on <strong class="perseus-word">PERSEUS</strong>:</p></li>
+            <form action="/perseus/discover-species" method="POST" autocomplete="off">
+           
+              <div id="pedigreeFruits">
+              <li id="peach-image" class="f-img">
+              <button name="species" value="Peach_variant"><img class="image" src="<%=peach.imageUrl %> " alt="Peach Icon"><p id="btn-species">Peach</p></button>
+              <div class="expl"><p><em id="name-species-latin">Prunus persica</em><br> 
+               <br> Literature merged:<br>
+                <a id="paperPeach1" target="none">Okie (1998);</a> <br>
+                <a id="paperPeach2" href="https://doi.org/10.1007/s00122-002-1128-5" target="blank">Aranzana<em> et al., </em>(2003);</a> <br>
+                <a id="paperPeach3" href="https://doi.org/10.1007/s10722-004-0575-z" target="blank">Xu<em> et al., </em>(2006);</a> <br>
+                <a id="paperPeach4" href="https://doi.org/10.1016/j.scienta.2008.10.008" target="blank">Cheng<em> et al., </em>(2009);</a> <br>
+                <a id="paperPeach5" href="https://doi.org/10.1016/j.scienta.2010.05.015" target="blank">Xie<em> et al., </em>(2010);</a><br>
+                <a id="paperPeach6" href="https://doi.org/10.21273/JASHS.137.2.114" target="blank">Sitther<em> et al., </em>(2012);</a><br> 
+                <a id="paperPeach7" href="https://doi.org/10.1186/1471-2156-14-84" target="blank">Li<em> et al., </em>(2013);</a> <br>
+                <a id="paperPeach8" href="https://doi.org/10.1371/journal.pone.0136803" target="blank">Micheletti<em> et al., </em>(2015)</a><br>
+                <a id="paperPeach9" href="https://doi.org/10.1007/s11032-015-0357-7" target="blank">Fresnedo-Ramírez<em> et al., </em>(2015);</a> <br> 
+                <a id="paperPeach10" href="https://doi.org/10.1371/journal.pone.0210928" target="blank">Vanderzande<em> et al., </em>(2019)</a> </p></div>
+            </li>
+            <li id="apple-image" class="f-img">
+              <button name="species" value="Apple_variant"><img class="image" src="<%=apple.imageUrl %> " alt="Apple Icon"><p id="btn-species">Apple</p></button>
+              <div class="expl"><p><em id="name-species-latin">Malus</em> × <em>domestica</em><br>
+                <br> Literature merged:<br>
+                <a id="paperApple1" href="https://doi.org/10.1007/s001220050841" target="blank">Gianfranceschi <em> et al., </em>(1998);</a>
+                <br><a id="paperApple4" href="https://doi.org/10.1080/14620316.2007.11512227" target="blank">Ramos-Cabrer<em> et al., </em>(2007);</a>
+                <br><a id="paperApple2" href="https://doi.org/10.1007/s11032-010-9502-5" target="blank">Evans <em> et al., </em>(2011);</a>
+                <br><a id="paperApple3" href="https://doi.org/10.1007/s11032-014-0054-y" target="blank">Salvi <em> et al., </em>(2014);</a>
+                <br><a id="paperApple5" href="https://doi.org/10.1038/hortres.2017.3" target="blank">Howard<em> et al., </em>(2017);</a>
+                <br><a id="paperApple6" href="https://doi.org/10.1007/s11295-016-1087-7" target="blank">Larsen<em> et al., </em>(2017);</a>
+                <br><a id="paperApple7" href="https://doi.org/10.1007/s11032-017-0755-0" target="blank">van de Weg<em> et al., </em>(2018);</a>
+                <br><a id="paperApple8" href="https://doi.org/10.1371/journal.pone.0202405" target="blank">Ordidge <em> et al., </em>(2018);</a>
+                <br><a id="paperApple9" href="https://doi.org/10.1371/journal.pone.0210928" target="blank">Vanderzande <em> et al., </em>(2019);</a>
+                <br><a id="paperApple10" href="https://doi.org/10.1186/s12870-019-2171-6" target="blank">Muranty<em> et al., </em>(2020);</a>
+                <br><a id="paperApple11" href="https://doi.org/10.1016/j.scienta.2020.109599" target="blank">af Sätra<em> et al., </em>(2020);</a>
+                <br><a id="paperApple12" href="https://doi.org/10.1038/s41438-021-00637-5" target="blank">Howard<em> et al., </em>(2021);</a>
+                <br><a id="paperApple13" href="https://doi.org/10.1093/hr/uhab069" target="blank">Howard<em> et al., </em>(2022a);</a>
+                <br><a id="paperApple14" href="https://doi.org/10.1002/ppp3.10313" target="blank">Howard<em> et al., </em>(2022b);</a>
+                <br><a id="paperApple15" href="https://doi.org/10.21273/HORTSCI16354-21" target="blank">Luby<em> et al., </em>(2022);</a>
+                <br><a id="paperApple16" href="https://doi.org/10.3390/horticulturae9050575" target="blank">Gilpin<em> et al., </em>(2023)</a>
+            </li>
+            <li id="pear-image" class="f-img">
+              <button name="species" value="Pear_variant"><img class="image" src="<%=pear.imageUrl %> " alt="Pear Icon"><p id="btn-species">Pear</p></button>
+              <div class="expl"><p><em id="name-species-latin">Pyrus</em> genus<br> 
+                <br> Literature merged:<br>
+                <a id="paperPear1" href="https://doi.org/10.1007/s13580-012-0082-7" target="blank">Cho<em> et al., </em>(2012);</a>
+                <br><a id="paperPear2" href="https://doi.org/10.1534/g3.120.401327" target="blank">Montanari<em> et al., </em>(2020);</a>
+                <br><a id="paperPear3" href="https://doi.org/10.1007/s11295-020-01467-7" target="blank">Zurn<em> et al., </em>(2020)</a></p></div>
+            </li>
+           <li id="almond-image" class="f-img">
+              <button name="species" value="Almond_variant"><img class="image" src="<%=almond.imageUrl %> " alt="Almond Icon"><p id="btn-species">Almond</p></button>
+              <div class="expl"><p><em id="name-species-latin">Prunus dulcis</em> <br> 
+              <br> Literature merged:
+              <br> <a id="paperAlmond1" target="none">Stylianides (1977);</a>
+              <br><a id="paperAlmond2" target="none">Grasselly and Crossa-Raynaud (1980);</a>
+              <br><a id="paperAlmond3" target="none">Brooks and Olmo (1997);</a>
+              <br><a id="paperAlmond4" target="none">Felipe (2000);</a>
+              <br><a id="paperAlmond5" href="https://doi.org/10.1007/s10681-005-9009-z" target="blank">López<em> et al., </em>(2006);</a>
+              <br><a id="paperAlmond6" href="https://doi.org/10.1111/j.1439-0523.2008.01421.x" target="blank">Marchese<em> et al., </em>(2008);</a>
+              <br><a id="paperAlmond7" href="https://doi.org/10.21273/HORTSCI.49.4.396" target="blank">Gasic and Preece (2014);</a>
+              <br><a id="paperAlmond8" href="https://doi.org/10.1038/s41438-020-00444-4" target="blank">Pérez de los Cobos<em> et al., </em>(2021)</a></p></div>
+            </li>
+           <li id="grape-image" class="f-img">
+              <button name="species" value="Grapevine_variant"><img class="image" src="<%=grape.imageUrl %> " alt="Grapevine Icon"><p id="btn-species">Grapevine</p></button><div class="grape-expl" class="expl"><p><em id="name-species-latin">Vitis </em>genus
+               <br><br>Literature merged:
+              <br><a id="paperGrapevine1" href="https://doi.org/10.1007/s00122-010-1411-9" target="blank">Cipriani<em> et al., </em>(2010);</a>
+              <br><a id="paperGrapevine2" href="https://doi.org/10.1007/s00122-012-1988-2" target="blank">Lacombe<em> et al., </em>(2013);</a>
+              <br><a id="paperGrapevine3" href="https://doi.org/10.1016/j.scienta.2017.02.044" target="blank">Raimondi<em> et al., </em>(2017);</a>    
+              <br><a id="paperGrapevine4" href="https://doi.org/10.1371/journal.pone.0192540" target="blank">Laucou<em> et al., </em>(2018);</a> 
+              <br><a id="paperGrapevine5" href="https://doi.org/10.3390/plants10122755" target="blank">Augusto<em> et al., </em>(2021);</a> 
+              <br><a id="paperGrapevine6" href="https://doi.org/10.3389/fpls.2020.605934" target="blank">D'Onofrio <em>et al., </em>(2021);</a>
+              <br><a id="paperGrapevine7" href="https://link.springer.com/article/10.1007/s10681-023-03235-9#Sec20" target="blank">Bettinelli<em> et al., </em>(2023)</a> </p></div>
+           </li>
+          </div>
+           </form>
+
+            <p><strong>&uarr; Discover the pedigrees &uarr;</strong></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="about-project">
+      <h2>KNOW MORE</h2>
+      <p class="project-summary">Find out more about our work!</p>
+      <div class="project-more">
+      <li class="project-more2"><button class="project-btn"><a href="/perseus/project#h2-1">Project</a></button></li>
+      <li class="project-more2"><button class="project-btn"><a href="/perseus/project#h2-2">Data Used</a></button></li>
+    </div>
+    </div>
+    </div>
+    <div id="about-us">
+      <h2>ABOUT US</h2>
+      <p class="about-summary">We are a multidisplicinary team from the <em>Rosaceae Genetics and Genomics</em> <br>research group at the <strong class="sign-btn">Centre for Research in Agricultural Genomics (<a href="https://www.cragenomica.es/" target="blank">CRAG</a>)</strong>.</p>
+      <p class="about-summary">Our objective as a reference research group in woody crops is to<br> <strong>unravel</strong> the <strong>genetics and genomics</strong> of Rosaceae crops,<br> while <strong>developing tools</strong> for the breeding and research sectors.</p>
+      <button id="group-more"class="btn_per"><a  href="/perseus/group">Read more ></a></button>
+    </div>
+
+    <div id="contact">
+      <p class="contact">Any question?</p>
+      <button id="contact-more" class="btn_per"><a href="/perseus/contact">Contact Us!</a></button>
+    </div>
+
+    <div id="fundingAndCollaborators">
+      <p class="followus">Supported by:</p>
+      <div id="fundingAndCollaborators">
+        <li class="severoOchoa"><a href="https://www.somma.es/" target="_blank"><img src="<%=severoOchoa.imageUrl%>" alt="<%=severoOchoa.name%>"></a></li>
+        <li class="ministerio"><a href="https://www.ciencia.gob.es/" target="_blank"><img src="<%=ministerio.imageUrl%>" alt="<%=ministerio.name%>"></a></li>
+        <li class="invite"><a href="https://www.h2020-invite.eu/" target="_blank"><img src="<%=invite.imageUrl%>" alt="<%=invite.name%>"></a></li>
+        <li class="freeClimb"><a href="https://primafreeclimb.com/" target="_blank"><img src="<%=freeClimb.imageUrl%>" alt="<%=freeClimb.name%>"></a></li>
+      </div>
+    </div>
+    
+  
+  </main>
+<%- include('./shared/includes/footer', {chevronup, facebook, instagram, twitter, linkedin, crag, irta}) %>
+

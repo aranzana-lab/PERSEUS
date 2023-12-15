@@ -1,0 +1,78 @@
+<%- include('./shared/includes/head', { pageTitle: 'PERSEUS: Who we are' }) %>
+ <link rel="stylesheet" href="/perseus/styles/logo.css" />
+ <link rel="stylesheet" href="/perseus/styles/group.css" />
+</head>
+<body>
+    <%- include('./shared/includes/header', {graph, threeDots, x, facebook, instagram, twitter, linkedin}) %>    
+<section id="main1">
+    <img id="background-img" src="<%=exampleGraph.imageUrl%> " alt="Example Graph Image Background">
+    <h1 class="aboutus-title">WHO WE ARE</h1>
+    <div id="us">
+    <p class="intro-sent"><strong>PERSEUS</strong> is a website tool for pedigree visualizations <br>represented as graph networks</p>
+    <p class="about-summary">We are a multidisplicinary team from the <em>Rosaceae Genetics and Genomics</em> research group at the <strong class="sign-btn">Centre for Research in Agricultural Genomics (<a href="https://www.cragenomica.es/" target="blank">CRAG</a>)</strong> that works to understand, discover, and improve the genetics and genomics of Rosaceae crops.</p>
+    <p class="about-summary">Our objective is to unravel the <strong>genetics and genomics</strong> of Rosaceae fruit trees, while <strong>developing tools</strong> for the breeding and research sectors.</p>
+    <p class="crag-place"><img src="<%=cragCentre.imageUrl%> " alt="CRAG Center" ></p>
+    <p class="place">CRAG. Barcelona, Spain.</p>
+
+    <h2>OUR TEAM</h2>
+        <hr>
+
+    <div id="ind-groups">
+         <div id="individual">
+            <li class="image">
+              <img src="<%=nicole.imageUrl%>" alt="Nicole Pradas Image">
+            </li>
+            <li class="person">
+                <p class="name-pers">Nicole Pradas</p>
+                <p class="position">PhD Candidate</p>
+                <p class="explanation">Nicole is a second-year PhD candidate. Graduated in Genetics and specialized in Plant Breeding. She has developed the website tool of <strong>PERSEUS</strong> and performed the interactive force-graph network and hierarchical network visualizations. She has taken part in the development of bioinformatic tools, web scrapping, analysis and processing of data, and the collection, merge, and curation of the agronomical and phenotypical data from public fruit crop databases.</p>
+           </li>
+        </div>
+        <div id="individual">
+            <li class="image">
+                <img src="<%=fede.imageUrl%>" alt="Federico Jurado Image">
+            </li>
+            <li class="person">
+                <p class="name-pers">Federico Jurado</p>
+                <p class="position">PhD Candidate</p>
+                <p class="explanation">Federico is a third-year PhD candidate. Graduated in Biology and specialized in Bioinformatics. He has taken part in the development of bioinformatic tools, web scrapping, and connection and data storage on Neo4j Software. In addition, he has contributed in the analysis and processing of data for the pedigree visualizations.</p>
+            </li>
+        </div>
+         <div id="individual">
+            <li class="image">
+                <img src="<%=carles.imageUrl%>" alt="Carles Onielfa Image">
+            </li>
+            <li class="person">
+                <p class="name-pers">Carles Onielfa</p>
+                <p class="position">Artificial Intelligence (AI) and Data Science Support Staff</p>
+                <p class="explanation">Carles is an specialist in Artificial Intelligence and Data Science. Graduated in Mathematics and Computer Science, he is currently working as AI and Data Science support staff for genomics research at the Institute of Agrifood Research and Technology (IRTA). He has taken part in the development of the webtool visualization, performing the hierarchical network visualizations and connection of the webtool to the Neo4j database. </p>
+           </li>
+        </div>
+        <div id="individual">
+            <li class="image">
+                <img src="<%=txosse.imageUrl%>" alt="Maria José Aranzana Image">
+            </li>  <li class="person"> 
+                <p class="name-pers">Dr Maria José Aranzana</p>
+                <p class="position">Principal Investigator (PI)</p>
+               <p class="explanation">Maria José is the Principal Investigator of the <strong>Rosaceae Genetics and Genomics</strong> group. She is in charge of the direction, management, and research strategies of <strong>PERSEUS</strong>.</p>
+            </li>           
+        </div>
+        <div id="individual">
+            <li class="image">
+                <img src="<%=pere.imageUrl%>" alt="Pere Arús Image">
+            </li>
+                <li class="person">   
+                <p class="name-pers">Dr Pere Arús</p>
+                <p class="position">Senior Researcher</p>
+                <p class="explanation">Pere is a Senior Researcher working at the <strong>Rosaceae Genetics and Genomics</strong> group. He is responsible for the senior assistance of the genetics, genomics, and breeding concepts for the development of <strong>PERSEUS</strong>.</p>
+           </li>
+        </div>
+       
+        </div>
+        </div>
+        </div>
+
+</section>
+        <%- include('./shared/includes/footer', {chevronup, facebook, instagram, twitter, linkedin, crag, irta}) %>
+
+

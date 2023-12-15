@@ -1,0 +1,62 @@
+<%- include('./shared/includes/head', { pageTitle: 'PERSEUS: Contact'}) %>
+ <link rel="stylesheet" href="/perseus/styles/logo.css"/>
+ <link rel="stylesheet" href="/perseus/styles/contact.css"/>
+</head>
+<body>
+    <%- include('./shared/includes/header', {graph, threeDots, x, facebook, instagram, twitter, linkedin}) %>    
+    <section id="main1">
+    <h1 id="contact-page">CONTACT US</h1>
+        <p>In case you have any questions or comments regarding <strong>PERSEUS</strong>, please feel free to contact us.</p>
+        <p>Give a look at the publication:</p>
+        <p id="name-paper"><a  href="">Pradas, N., Jurado-Ruiz, F., Onielfa, C., Arús, P., and Aranzana, M.J. (2023). <em>PERSEUS</em>: an interactive, user-friendly web interface for pedigrees visualization. <em>[...]</em>.</a></p>
+        <p id="send-us">Send us a message at any of the following e-mails:</p>
+        <div id="contact-em">
+        <div id="emails"> 
+            <li class="image">
+                <img src="<%=fede.imageUrl%>" alt="Federico Jurado Image">
+            </li>
+            <li class="email">
+                <p class="name-pers-email">Federico Jurado</p>
+                <p class="position-email">PhD Candidate</p>
+                <p class="email-dir">federico.jurado@cragenomica.es</p>
+            </li>
+             <li class="image">
+                <img src="<%=txosse.imageUrl%>" alt="Maria José Aranzana Image">
+            </li>  <li class="email"> 
+                <p class="name-pers-email">Dr Maria José Aranzana</p>
+                <p class="position-email">Principal Investigator (PI)</p>
+                <p class="email-dir">mariajose.aranzana@irta.cat</p>
+            </li>
+            <li class="image">
+                <img src="<%=pere.imageUrl%>" alt="Pere Arús Image">
+            </li>
+                <li class="email">   
+                <p class="name-pers-email">Dr Pere Arús</p>
+                <p class="position-email">Senior Researcher</p>
+                <p class="email-dir">pere.arus@irta.cat</p>
+            </li>
+            </li>
+        </div>
+        <div id="emails">
+                <li class="image">
+                <img src="<%=nicole.imageUrl%>" alt="Nicole Pradas Image">
+            </li>
+            <li class="email">
+                <p class="name-pers-email">Nicole Pradas</p>
+                <p class="position-email">PhD Candidate</p>
+                <p class="email-dir">nicole.pradas@cragenomica.es</p>
+            </li>
+           <li class="image">
+                <img src="<%=carles.imageUrl%>" alt="Carles Onielfa Image">
+            </li>
+            <li class="email">
+                <p class="name-pers-email">Carles Onielfa</p>
+                <p class="position-email">Artificial Intelligence and Data Science Support Staff</p>
+                <p class="email-dir">carles.onielfa@irta.cat</p>
+            </li>
+        </div>
+        </div>
+    </section>
+<%- include('./shared/includes/footer', {chevronup, facebook, instagram, twitter, linkedin, crag, irta}) %>
+
+

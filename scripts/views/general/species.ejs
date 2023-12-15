@@ -1,0 +1,42 @@
+<%- include('./shared/includes/head', { pageTitle: 'PERSEUS: Discover Pedigree'
+}) %>
+<link rel="stylesheet" href="/perseus/styles/logo.css" />
+<link rel="stylesheet" href="/perseus/styles/discover.css" />
+<script
+  type="text/javascript"
+  src="/perseus/scripts/show-search.js"
+  defer
+></script>
+<script type="text/javascript" src="/perseus/scripts/show-search.js" defer></script>
+ 
+
+</head>
+  <body>
+  <%- include('./shared/includes/header', {graph, threeDots, x, facebook, instagram, twitter, linkedin}) %>
+<section id="main1">
+  <div id="search-species">
+    <form id="form-search-spec" action="/perseus/discover-species" method="POST" autocomplete="off">
+    <input type="hidden" name="_csrf" value="<%= locals.csrfToken %>">
+    <p id="title-species">Select species for visualization:</p>
+    <div id="search-species2"> 
+    <select name="species" id="species-to-select" type="text" required>
+        <option value="">Species</option>
+        <option value="Peach_variant">Peach (Prunus persica)</option>
+        <option value="Apple_variant">Apple (Malus × domestica)</option>
+        <option value="Pear_variant">Pear (Pyrus genus)</option>
+        <option value="Almond_variant">Almond (Prunus dulcis)</option>
+        <option value="Grapevine_variant">Grapevine (Vitis genus)</option>
+      </select>
+      <div class="findSpecies">
+       <button class="btn-search3">Search</button>
+    </div>
+    </div> 
+    </form>
+  </div>
+
+ <svg id="graph-2d" width="800" height="800"></svg>
+ 
+</section>
+
+
+<%- include('./shared/includes/footer', {chevronup, facebook, instagram, twitter, linkedin, crag, irta}) %>

@@ -1,0 +1,350 @@
+<%- include('./shared/includes/head', { pageTitle: 'PERSEUS: Our Project' }) %>
+<link rel="stylesheet" href="/perseus/styles/logo.css">
+<link rel="stylesheet" href="/perseus/styles/project.css">
+<script type="text/javascript" src="/perseus/scripts/show-search.js" defer></script>
+</head>
+
+<body>
+     <%- include('./shared/includes/header', {graph, threeDots, x, facebook, instagram, twitter, linkedin}) %>  
+<section id="main1">
+    <img id="background-img" src="<%=exampleGraph.imageUrl%> " alt="Example Graph Image Background">
+    <h1 id="title-project">OUR PROJECT</h1>
+    <div id="parts-project">
+        <a class="parts" href="#h2-1">Overview & User Guide</a>
+        <a class="parts" href="#h2-2">Methodology</a>
+        <a class="parts" href="#h2-3">Data Used</a>
+    </div>
+    <div class="part1">
+        <h2 id="h2-1">Overview</h2>
+        <p class="overview">Detailed and contrasted pedigree information is crucial for breeding in plant research, agronomy or in commercial breeding programs, to understand the genetics of simply and quantitatively inherited traits and to plan appropriate crosses for breeding new cultivars. However, plenty of pedigree relationships are often unknown or uncertain. In addition, automated and extensive pedigree reconstructions encompassing cultivars of most historical and commercial relevance are not normally easily displayed to the public. </p>
+        <p class="overview">Here we present <a href="#paper"><strong><em>PERSEUS</em></strong></a>, a user-friendly visualization webtool suitable for displaying pedigrees, exploring Parent-Offspring (PO) and close pedigree relationships, as well as for mining their relevant information. The visualization is presented as an interactive directed graph networks distributed using a force-repulsion method. It is compatible with almost all desktop and mobile systems, and it does not require of any license and/or database complexely formatted.</p>
+        <p class="overview"><em>PERSEUS</em> becomes a straightforward tool to identify the genotypes that have contributed most to the genetic variation of a specific species, and to trace back donors of relevant traits. It can help in the characterization and validation of qualitative and quantitative traits and assist in the preservation of variability and diversity of breeding materials, among other uses. </p>
+        <p class="overview">So far, <em>PERSEUS</em> presents a handful of reported pedigrees in <strong>five</strong> of the most economically important woody crops (<em>see the <strong><a href="#h2-3">data used</a></strong></em>). Nonetheless, it has the potential and impact to be continuedly increased by adding more reconstructions from any other species, and  additional features as genomic markers information.</p>
+
+    <div id="how-to-use">
+        <h3><em>PERSEUS</em> user guide</h3>
+        <h3><small>Last update: 12th December 2023.</small></h3>
+        <div id="video-pl"> 
+        <video  id="index-video"  class="index-video"  alt="A video example of the graph network representation - user guide"  src="<%=videoUserGuide.imageUrl %>"  type="video/mp4"  preload="auto"  playsinline="true" controls muted>Your browser does not support the video tag.</video>
+        </div>
+        
+        <p id="intro-userguide"><em>This user guide is thought as a detailed step-by-step use of the web-based tool. For a thorough understanding of the interface, the almond pedigree is showed as an example. The steps numbered on the video-example above are linked to the below sections.</em></p>
+        <p id="firefox-alert"><u>Disclaimer:</u> On Firefox navigation web the graph networks might not be seen with the original format.</p>
+        <p><strong>Discover Pedigrees</strong> tab:</p>
+        <p>&#8194;Users can search for <strong>complete pedigree visualizations</strong> of the species of interest.</p>
+        <p>&#8194;&#8194;<strong>1. Select species for visualization</strong>: Select a species and click on the 'Search' button for rendering the pedigree. 
+            <br>&#8194;&#8194;&#8194;&#8194;The complete visualization is displayed at the centre of the webpage as a force-directed graph network. Information of the species and the literature from which the pedigree data was obtained is shown at the bottom of the graph.
+            <br>&#8194;&#8194;&#8194;&#8194;Within the graph, each one of the accessions and/or cultivars are represented as <strong>nodes</strong> in <strong class="color-nodes">blue</strong>, and their Parent-Offspring (PO) relationships as links/edges in <strong class="color-links">grey</strong>.
+            In the case of self-compatible species, self-fertilization crosses are shown in <strong class="color-selflinks">light blue</strong>. Links are tagged with a letter describing how the relationship was resolved:
+            <br>&#8194;&#8194;&#8194;&#8194;· <strong>Historical (H):</strong> PO relationship determined through historical data.
+            <br>&#8194;&#8194;&#8194;&#8194;· <strong>Genotypic (G):</strong> PO relationship only resolved genotypically (with molecular markers - SSR, SNP, or DArT&#153; data).
+            <br>&#8194;&#8194;&#8194;&#8194;· <strong>Absolute (A):</strong> PO relationship determined through genotypic data and confirmed with historical data.
+            <br>&#8194;&#8194;&#8194;&#8194;· <strong>Genotypic Possible (GP):</strong> Possible PO relationship determined through IBD values.
+            <div id="div-guide"><img class="guide-image" id="guide1" src="<%=guide1.imageUrl %> " alt="User Guide Step 1">
+            </div>
+                <br>
+        <p>&#8194;&#8194;<strong>2. Download information of all nodes</strong>: By clicking at the <strong> 'Download CSV - All nodes'</strong> button, the entire pedigree dataset can be downloaded in <em>.csv</em> format, alongside with phenotypical characterization data (passport data). This information has been extracted from the literature and public fruit crop databases (<em>see the <a href="#h2-3">data used</a></em>).
+            <div id="div-guide"><img class="guide-image" id="guide2" src="<%=guide2.imageUrl %> " alt="User Guide Step 2">
+            </div>
+                <br>
+        <div id="guide3-4">
+        <p>&#8194;&#8194;<strong>3. Interactive selection of nodes</strong>: Users can move and select nodes individually or by multiple selection. When a node is clicked on, the node and its related links are coloured in bright yellow.
+        <br>&#8194;&#8194;&#8194;&#8194;Passport data of the selected individuals can be looked at by clicking on the <strong>'Check the selected cultivars - Passport data'</strong> button that appears on the upper-left corner. Attached to this section, the <strong>'Download CSV - Selected nodes'</strong> button can be clicked to download the data of the selected individuals.</p>
+        <div id="div-guide"><img class="guide-image" id="guide3" src="<%=guide3.imageUrl %> " alt="User Guide Step 3">
+        </div>
+        </div>
+                <br>
+        <div id="guide3-4">
+        <p>&#8194;&#8194;<strong>4. Search a specific individual</strong>: Individual nodes can be searched in the complete pedigree visualization with the <strong>'Search an Individual'</strong> selector at the top of the page. When clicked, a sub-window appears containing a dropdown selection of all the available accessions/cultivars' names. Right after the name of interest has been picked, the node is automatically coloured in the graph. If multiple names are selected, these are differentially coloured.
+        <div id="div-guide"><img class="guide-image" id="guide4" src="<%=guide4.imageUrl %> " alt="User Guide Step 4">
+        </div>   
+        </div> 
+        <p>&#8194;&#8194;<strong>5. Colour the pedigree by a particular trait</strong>: The <strong>'Colour by trait'</strong> selector at the top of the page allows the users to choose and display a set of nodes with a certain attribute associated to a property or trait of interest available in their passport data. For example, an almond breeder wants to know the accessions within the pedigree that have been associated with a bitter or sweet flavour. On this selector, the breeder looks for the "Flavour" trait on the dropdown button, and the several effects available in the dataset 
+            associated with flavour appear. By clicking the "Slightly bitter" or the "Sweet" button, the nodes that have these effect associated are automatically coloured and the rest of the nodes disappear. In case the nodes don't have information for that trait, their effect is displayed as "Undefined", and they are coloured in grey.
+        <br>&#8194;&#8194;&#8194;&#8194;*Keep in mind that the effects of the traits available in <em>PERSEUS</em> have been mined from the literature and/or public fruit crop databases. They have been associated to each accession/cultivar <strong>by their name</strong> in the event that the trait was not associated with a particular genotype. Hence, part of the characterization data might not be true-to-type.</p>
+       <div id="div-guide"><img class="guide-image" id="guide5" src="<%=guide5.imageUrl %> " alt="User Guide Step 5">
+        </div>
+        <p>&#8194;&#8194;<strong>6. Personalize the graph network</strong>: Users can personalize the graph visualization with the <strong>'Personalize the visualization'</strong> selector. The graph background can be changed to a medium grey or light grey colours. Nodes can be modified regarding their size, RGB colour and colour of the label name, while links' colour and labels can be changed in size and between white/grey colour. 
+        The colour to highlight selected nodes and links can also be changed on 'Highlight Selection' to yellow, red, purple or green. The new visualization is then maintained when using all the functions of the webtool. Refresh the page to recover the initial visualization.</p>
+        <div id="div-guide"><img class="guide-image" id="guide6" src="<%=guide6.imageUrl %> " alt="User Guide Step 6"></div>
+        <p>&#8194;&#8194;<strong>7. Upload user data</strong>: Users are able to upload own pedigree data form one or multiple <em><u>.csv</u></em> documents, and merge it with the existent datasets by clicking on the <strong>'Submit'</strong> button. We provide a template to assist users in understanding the correct format for uploading data. This template is readily available for download, ensuring seamless data submission.
+        <br>&#8194;&#8194;&#8194;The section <strong>'See your uploaded data'</strong> shows the uploaded data in table format, for an easier tracking of the uploaded documents.
+        
+        <div id="div-guide"><img class="guide-image" id="guide7" src="<%=guide7.imageUrl %> " alt="User Guide Step 6"></div>
+        <br>&#8194;&#8194;&#8194;<strong>7.1.</strong> Automatically on the directed graph network, the new nodes appear in <strong class="color-user-nodes">green</strong>, and new links are tagged as <strong>(U)</strong>. In case the user data contains accessions with the same name as accessions already available on the <em>PERSEUS</em> dataset, only the novel links are uploaded.
+        Whenever new links are inconsistent when compared with available PO relationships, these new links will appear in <strong class="color-inconsistent-links">red</strong> colouring. These inconsistent PO relationshiphs might appear when, for instance, a third parent is is given to a node which already had assigned two links of entrance.
+        <br>&#8194;&#8194;&#8194;At the bottom of the webtool, a new button 'Download CSV - Nodes (Without User Data)' permits the download of the data solely available on the <em>PERSEUS</em> dataset, while the button 'Download CSV - All Nodes' incorporates previous data with the user data all in one <em>.csv</em> document.
+        The new graph directed network has all previous functionalities available. 
+        </p>
+        <div id="div-guide"><img class="guide-image" id="guide7_1" src="<%=guide7_1.imageUrl %> " alt="User Guide Step 6"></div>
+        <p>&#8194;&#8194;<strong>8. Search for a specific pedigree</strong>: A particular individual and its close relationships can be searched to obtain a subset of the general pedigree at the <strong>'Look for a specific pedigree'</strong> selector.
+        The name of the accession/cultivar of interest can be seeked on the autocomplete form. Then, the number of generations the user would like to render can be specified on the 'Number of distance jumps' tab. Right after clicking the 'Search' button, a new window appears with the subset pedigree and the searched individual coloured in red. 
+        The search the user just made can be checked on the upper-right corner of the website. This visualization contains all the functionalities of the general graph, including the upload of user data (see steps 1 to 7).
+        <br>&#8194;&#8194;&#8194;&#8194;<strong>8.1. Hierarchical view: </strong>By clicking on the <strong>'Change to hierarchical view'</strong> button, the subset pedigree can also be renderized as a hierarchical tree (showing the oldest generations on top of the graph and the subsequent offsprings downside the view).
+        <div id="div-guide"><img class="guide-image" id="guide8" src="<%=guide8.imageUrl %> " alt="User Guide Step 7">
+        </div>
+    </p>
+        
+    </div>
+    </div>
+    <div class="part2">
+    <h2 id="h2-2">Methodology</h2>
+       <section class="environment">
+        <h3>Webtool environment</h3>
+        <p>A NodeJS runtime environment [<a href="#ref1">1</a>] compounded with an ExpressJS framework [<a href="#ref2">2</a>] and a MongoDB database [<a href="#ref3">3</a>] were created for the development of the <em>PERSEUS</em> webtool. The JavaScript language was selected considering its optimal implementation across nearly all internet browsers. 
+        </p>
+        </section>
+        <section class="graph">    
+        <h3>Graph visualization</h3>
+        <p>The interactive directed graph networks were developed as independent SVG elements using the D3 (Data Driven Documents)-based JavaScript v6 library (d3.js) [<a href="#ref4">4</a>]. The networks and hierarchical graph views were constructed by using a force-repulsion method within the d3.js library.</p>
+        <p>The reported pedigree data used for the graph visualizations was stored inside the open-source graph databaase Neo4j Software [<a href="#ref5">5</a>, <a href="#ref6">6</a>]. A Python code [<a href="#ref7">7</a>] was developed using the Pandas [<a href="#ref8">8</a>] and NetworkX [<a href="#ref9">9</a>] libraries to generate the connection and data storage into the Neo4j database. From this connection, the <em>PERSEUS</em> web interface extracted the information and rendered the graph networks.</p>
+        </section>
+       <section class="collection-webscrapping">    
+        <h3>Data collection & Web scrapping</h3>
+        <p>The pedigree data presented on <em>PERSEUS</em> was obtained from open-access literature. The data search was focused on literature that reported historical and/or genotypic Parent-Offspring (PO) relationships. If two or more reports were selected for the graph construction, the compatible relationships were merged within the same graph network (<em>see the <a href="#h2-3">data used</a></em>). Wether any inconsistent PO relationships were found between the literature, the relationship was discarded as a way of evading erroneous data.</p>
+        <p>For almost all of the selected literature, the pedigree relationships were based on genotypic that was data partially confirmed with historical records. However, in the case of the graph visualization of <em> <a href="#h2-3">Prunus Persica</a></em>, the reconstruction was mostly based on historical data because no genotypic peach pedigree reconstructions have been developed to date.</p>
+        <br>
+        <p>Moreover, a web scrapping procedure from the literature and public fruit crop databases <em>(see the <a href="#h2-3">data used</a>)</em> was developed in order to extract, when available, relevant agronomical information and phenotypic characterization of the accesions/cultivars within the pedigrees (such as the country of origin, identification code, harvest time, resistances or quality traits). 
+            All this information was gathered and referenced on a passport data. A cautious data merge and curation was followed as a way to compile all the publicly-related data in a single data repository. In case more than 15 different values were associated with a particular trait or property, a simplified version of the data was created and added to the database. The original version of the data can be found under the name "<em>trait_</em>original", while the simplified versions can be depicted as "<em>trait_</em>simplified".
+            <br>
+            <br>&#8194;&#8194;&#8194;&#8194;It is worth mentioning that, in order to perform the web scrapping and merge of the pedigree and passport data, the mining of information through the public crop databases was made by searching the names of the accessions/cultivars. Hence, even though the historical pedigree data of the public databases was reviewed, the data was not associated to particular genotypes and might not be true-to-type. In addition, no maternal DNA information was added for the graph network development, thence the parents order is arbitrary.
+          </p>
+        </section>
+    </div>
+    <div class="part3">
+    <h2 id="h2-3">Data Used</h2>    
+    <p><em>Select one of the species to unfold the data used. Two blocks of data will appear: 
+        <br>&#8194;&#8194;&#8194;&#8194;1. The literature used for rendering the pedigree graph visualization and/or gathering agronomical and phenotypical data. 
+        <br>&#8194;&#8194;&#8194;&#8194;2.The public fruit crops databases and the literature from which the agronomical and phenotypical data were extracted.</em></p>
+    <div id="data-species">
+        <section class="species" id="btn-peach" onclick="showAndHide(this.id)">
+            <div class="species-name"><img class="species-image" src="<%=peach.imageUrl %> " alt="Peach Icon">
+             <p class="ped">Peach</p>
+            </div>
+        </section>
+        <section class="species" id="btn-apple" onclick="showAndHide(this.id)">
+         <div class="species-name">
+            <img class="species-image" src="<%=apple.imageUrl %> " alt="Apple Icon">
+         <p class="ped">Apple</p>
+         </div>
+        </section>
+        <section class="species" id="btn-pear" onclick="showAndHide(this.id)">
+         <div class="species-name">
+         <img class="species-image" src="<%=pear.imageUrl %> " alt="Pear Icon">
+         <p class="ped">Pear</p>
+         </div>
+        </section>
+        <section class="species" id="btn-almond" onclick="showAndHide(this.id)">
+         <div class="species-name">
+         <img class="species-image" src="<%=almond.imageUrl %> " alt="Almond Icon">
+         <p class="ped">Almond</p>
+         </div>
+        </section>
+        <section class="species" id="btn-grape" onclick="showAndHide(this.id)">            
+         <div class="species-name">
+         <img class="species-image" src="<%=grape.imageUrl %> " alt="Grapevine Icon">
+         <p class="ped">Grapevine</p>
+         </div>
+        </section>
+    </div>
+<div id="links-ref">
+         <div class="expl" id="expl-peach">
+            <div id="ped-data">
+            <p>Peach pedigree visualization</p>
+            <p><strong>Literature used for the graph construction:</strong></p>
+            <p>
+                <a id="paperPeach1" target="none">Okie, W. R. (1998). Handbook of peach and nectarine varieties. Performance in the Southeastern United States and index of names. Agriculture Handbook (Washington), (714);</a> <br>
+              <p></p>
+                <a id="paperPeach2" href="https://doi.org/10.1007/s00122-002-1128-5" target="blank">Aranzana, M., Carbó, J., & Arús, P. (2003). Microsatellite variability in peach [Prunus persica (L.) Batsch]: cultivar identification, marker mutation, pedigree inferences and population structure. Theoretical and Applied Genetics, 106(8), 1341-1352;</a> <br>
+              <p></p>
+                <a id="paperPeach3" href="https://doi.org/10.1007/s10722-004-0575-z" target="blank">Xu, D.H., Wahyuni, S., Sato, Y. et al. Genetic Diversity and Relationships of Japanese Peach (Prunus persica L.) Cultivars Revealed by AFLP and Pedigree Tracing. Genet Resour Crop Evol 53, 883–889 (2006);</a> <br>
+              <p></p>
+                <a id="paperPeach4" href="https://doi.org/10.1016/j.scienta.2008.10.008" target="blank">Cheng, Z., & Huang, H. (2009). SSR fingerprinting Chinese peach cultivars and landraces (Prunus persica) and analysis of their genetic relationships. Scientia Horticulturae, 120(2), 188-193;</a> <br>
+              <p></p>
+                <a id="paperPeach5" href="https://doi.org/10.1016/j.scienta.2010.05.015" target="blank">Xie, R., Li, X., Chai, M., Song, L., Jia, H., Wu, D., ... & Gao, Z. (2010). Evaluation of the genetic diversity of Asian peach accessions using a selected set of SSR markers. Scientia horticulturae, 125(4), 622-629;</a><br>
+              <p></p>
+                <a id="paperPeach6" href="https://doi.org/10.21273/JASHS.137.2.114" target="blank">Sitther, V., Zhang, D., Dhekney, S. A., Harris, D. L., Yadav, A. K., & Okie, W. R. (2012). Cultivar identification, pedigree verification, and diversity analysis among peach cultivars based on simple sequence repeat markers. Journal of the American Society for Horticultural Science, 137(2), 114-121;</a> <br>
+              <p></p>
+                <a id="paperPeach7" href="https://doi.org/10.1186/1471-2156-14-84" target="blank">Li, X. W., Meng, X. Q., Jia, H. J., Yu, M. L., Ma, R. J., Wang, L. R., ... & Aranzana, M. J. (2013). Peach genetic resources: diversity, population structure and linkage disequilibrium. BMC genetics, 14(1), 1-16;</a> <br>
+              <p></p>
+                <a id="paperPeach8" href="https://doi.org/10.1371/journal.pone.0136803" target="blank">Micheletti, D., Dettori, M. T., Micali, S., Aramini, V., Pacheco, I., Da Silva Linge, C., ... & Aranzana, M. J. (2015). Whole-genome analysis of diversity and SNP-major gene association in peach germplasm. PloS one, 10(9), e0136803.</a>
+              <p></p>
+                <a id="paperPeach9" href="https://doi.org/10.1007/s11032-015-0357-7" target="blank">Fresnedo-Ramírez, J., Bink, M. C., van de Weg, E., Famula, T. R., Crisosto, C. H., Frett, T. J., ... & Gradziel, T. M. (2015). QTL mapping of pomological traits in peach and related species breeding germplasm. Molecular Breeding, 35, 1-19;</a>
+              <p></p>
+                <a id="paperPeach10" href="https://doi.org/10.1371/journal.pone.0210928" target="blank">Vanderzande, S., Howard, N. P., Cai, L., Da Silva Linge, C., Antanaviciute, L., Bink, M. C., ... & Peace, C. (2019). High-quality, genome-wide SNP genotypic data for pedigreed germplasm of the diploid outbreeding species apple, peach, and sweet cherry through a common workflow. PloS one, 14(6), e0210928.</a>
+           
+            </p>
+            </div>
+            <div id="repositiories">
+            <p><strong>Public fruit crops databases & literature used for data extraction:</strong></p>
+                <a id="repository2" href="https://www.fruitandnutlist.org/" target="blank">Fruits and Nuts Cultivar Database (FNCD), 2023</a><br>
+            </p>
+            </div>
+        </div>
+    <div class="expl" id="expl-apple">
+            <p>Apple pedigree visualization</p>
+            <div id="ped-data">
+            <p><strong>Literature used for the graph construction:</strong></p>
+            <p>
+                
+                <a id="paperApple1" href="https://doi.org/10.1007/s001220050841" target="blank">Gianfranceschi, L., Seglias, N., Tarchini, R., Komjanc, M., & Gessler, C. (1998). Simple sequence repeats for the genetic analysis of apple. Theoretical and Applied Genetics, 96, 1069-1076.;</a>
+                <p></p>
+                <a id="paperApple4" href="https://doi.org/10.1080/14620316.2007.11512227" target="blank">Ramos-Cabrer, A. M., Díaz-Hernández, M. B., & Pereira-Lorenzo, S. (2007). Morphology and microsatellites in Spanish apple collections. The Journal of Horticultural Science and Biotechnology, 82(2), 257-265.;</a>
+                <p></p>
+                <a id="paperApple2" href="https://doi.org/10.1007/s11032-010-9502-5" target="blank">Evans, K. M., Patocchi, A., Rezzonico, F., Mathis, F., Durel, C. E., Fernandez-Fernandez, F., ... & Van de Weg, W. E. (2011). Genotyping of pedigreed apple breeding material with a genome-covering set of SSRs: trueness-to-type of cultivars and their parentages. Molecular Breeding, 28, 535-547;</a>
+                <p></p>
+                <a id="paperApple3" href="https://doi.org/10.1007/s11032-014-0054-y" target="blank">Salvi, S., Micheletti, D., Magnago, P. et al. One-step reconstruction of multi-generation pedigree networks in apple (Malus × domestica Borkh.) and the parentage of Golden Delicious. Mol Breeding 34, 511–524 (2014).;</a>
+                <p></p>
+                <a id="paperApple5" href="https://doi.org/10.1038/hortres.2017.3" target="blank">Howard, N. P., Van De Weg, E., Bedford, D. S., Peace, C. P., Vanderzande, S., Clark, M. D., ... & Luby, J. J. (2017). Elucidation of the ‘Honeycrisp’ pedigree through haplotype analysis with a multi-family integrated SNP linkage map and a large apple (Malus × domestica) pedigree-connected SNP data set. Horticulture Research, 4;</a>
+                <p></p>
+                <a id="paperApple6" href="https://doi.org/10.1007/s11295-016-1087-7" target="blank">Larsen, B., Toldam-Andersen, T. B., Pedersen, C., & Ørgaard, M. (2017). Unravelling genetic diversity and cultivar parentage in the Danish apple gene bank collection. Tree Genetics & Genomes, 13, 1-12.;</a>
+                <p></p>
+                <a id="paperApple7" href="https://doi.org/10.1007/s11032-017-0755-0" target="blank">van de Weg, E., Di Guardo, M., Jänsch, M., Socquet-Juglard, D., Costa, F., Baumgartner, I., ... & Patocchi, A. (2018). Epistatic fire blight resistance QTL alleles in the apple cultivar ‘Enterprise’ and selection X-6398 discovered and characterized through pedigree-informed analysis. Molecular breeding, 38, 1-18;</a>
+                <p></p>
+                <a id="paperApple8" href="https://doi.org/10.1371/journal.pone.0202405" target="blank">Ordidge, M., Kirdwichai, P., Baksh, M. F., Venison, E. P., Gibbings, J. G., & Dunwell, J. M. (2018). Genetic analysis of a major international collection of cultivated apple varieties reveals previously unknown historic heteroploid and inbred relationships. PLoS One, 13(9), e0202405;</a>
+                <p></p>
+                <a id="paperApple9" href="https://doi.org/10.1371/journal.pone.0210928" target="blank">Vanderzande, S., Howard, N. P., Cai, L., Da Silva Linge, C., Antanaviciute, L., Bink, M. C., ... & Peace, C. (2019). High-quality, genome-wide SNP genotypic data for pedigreed germplasm of the diploid outbreeding species apple, peach, and sweet cherry through a common workflow. PloS one, 14(6), e0210928;</a>
+                <p></p>
+                <a id="paperApple10" href="https://doi.org/10.1186/s12870-019-2171-6" target="blank">Muranty, H., Denancé, C., Feugey, L., Crépin, J. L., Barbier, Y., Tartarini, S., ... & Durel, C. E. (2020). Using whole-genome SNP data to reconstruct a large multi-generation pedigree in apple germplasm. BMC Plant Biology, 20(1), 1-18;</a>
+                <p></p>
+                <a id="paperApple11" href="https://doi.org/10.1016/j.scienta.2020.109599" target="blank">af Sätra, J. S., Troggio, M., Odilbekov, F., Sehic, J., Mattisson, H., Hjalmarsson, I., ... & Garkava-Gustavsson, L. (2020). Genetic Status of the Swedish Central collection of heirloom apple cultivars. Scientia Horticulturae, 272, 109599;</a>
+                <p></p>
+                <a id="paperApple12" href="https://doi.org/10.1038/s41438-021-00637-5" target="blank">Howard, N. P., Peace, C., Silverstein, K. A., Poets, A., Luby, J. J., Vanderzande, S., ... & van de Weg, E. (2021). The use of shared haplotype length information for pedigree reconstruction in asexually propagated outbreeding crops, demonstrated for apple and sweet cherry. Horticulture research, 8;</a>
+                <p></p>
+                <a id="paperApple13" href="https://doi.org/10.1093/hr/uhab069" target="blank">Howard, N. P., Van De Weg, E., & Luby, J. J. (2022a). A new method to reconstruct the direction of parent-offspring duo relationships using SNP array data and its demonstration on ancient and modern cultivars in the outcrossing species Malus× domestica. Horticulture Research, 9, uhab069;</a>
+                <p></p>
+                <a id="paperApple14" href="https://doi.org/10.1002/ppp3.10313" target="blank">Howard, N. P., Micheletti, D., Luby, J. J., Durel, C. E., Denancé, C., Muranty, H., ... & Albach, D. C. (2022b). Pedigree reconstruction for triploid apple cultivars using single nucleotide polymorphism array data. Plants, People, Planet, 5(1), 98-111;</a>
+                <p></p>
+                <a id="paperApple15" href="https://doi.org/10.21273/HORTSCI16354-21" target="blank">Luby, J. J., Howard, N. P., Tillman, J. R., & Bedford, D. S. (2022). Extended pedigrees of apple cultivars from the University of Minnesota breeding program elucidated using SNP array markers. HortScience, 57(3), 472-477;</a>
+                <p></p>
+                <a id="paperApple16" href="https://doi.org/10.3390/horticulturae9050575" target="blank">Gilpin, L., Røen, D., Schubert, M., Davik, J., Rumpunen, K., Gardli, K. A., ... & Alsheikh, M. (2023). Genetic Characterization of the Norwegian Apple Collection. Horticulturae, 9(5), 575.</a> </p>
+            </p>
+            </div>
+            <div id="repositiories">
+            <p><strong>Public fruit crops databases & literature used for data extraction:</strong></p>
+                <a id="repository1" href="https://www.nationalfruitcollection.org.uk/" target="blank">National Fruit Collection (NFC), 2023;</a> <br>
+                <a id="repository2" href="https://www.fruitandnutlist.org/" target="blank">Fruits and Nuts Cultivar Database (FNCD), 2023</a><br>
+            </p>
+            </div>
+        </div>
+     <div class="expl" id="expl-pear">
+            <p>Pear pedigree visualization </p>
+            <div id="ped-data">
+            <p><strong>Literature used for the graph construction:</strong></p>
+            <p>
+                <a href="https://doi.org/10.1007/s13580-012-0082-7" target="blank">Cho, KH., Shin, I.S., Kim, S.H. et al., (2012). Identification of Korean pear cultivars using combinations of SCAR markers. Hortic. Environ. Biotechnol. 53, 228-236.</a>
+                <p></p>
+                <a href="https://doi.org/10.1534/g3.120.401327" target="blank">Montanari, S., Postman, J., Bassil, N. V., & Neale, D. B. (2020). Reconstruction of the largest pedigree network for pear cultivars and evaluation of the genetic diversity of the USDA-ARS National Pyrus Collection. G3: Genes, Genomes, Genetics, 10(9), 3285-3297.</a>
+                <p></p>
+                <a href="https://doi.org/10.1007/s11295-020-01467-7" target="blank">Zurn, J.D., Nyberg, A., Montanari, S. et al., (2020). A new SSR fingerprinting set and its comparison to existing SSR- and SNP-based genotyping platforms to manage <em>Pyrus</em> germplasm resources. Tree Genetics & Genomes 16, 72.</a>
+            </p>
+            </div>
+            <div id="repositiories">
+            <p><strong>Public fruit crops databases & literature used for data extraction:</strong></p>
+                <a id="repository1" href="https://www.nationalfruitcollection.org.uk/" target="blank">National Fruit Collection (NFC), 2023;</a> <br>
+                <a id="repository2" href="https://www.fruitandnutlist.org/" target="blank">Fruits and Nuts Cultivar Database (FNCD), 2023</a><br>
+            </p>
+            </div>
+         </div>
+    <div class="expl" id="expl-almond">
+            <p>Almond pedigree visualization</p>
+            <div id="ped-data">
+            <p><strong>Literature used for the graph construction:</strong></p>
+            <p><a id="paperAlmond1" target="none">Stylianides, D. New almond varieties created by breeding in Greece. (1977). <em>Groupe de Recerche et d'Etude Mediterraneen pour l'Amandier</em>, 3, 140-149.</a>
+            <p></p>
+            <a id="paperAlmond2" target="none">Grasselly, Ch. and P. Crossa-Raynaud. (1980). L’Amandier. Maisonnueve & Larose: Paris.</a>
+            <p></p>
+            <a id="paperAlmond3" target="none">Brooks, R.M. and H.P. Olmo. (1997).Register of new fruit and nut varieties. ASHS Press: Alexandria.</a>
+            <p></p>
+            <a id="paperAlmond4" target="none">Felipe, A. J. (2000). El almendro: el material vegetal. Mira Editores: Zaragoza.</a>
+            <p></p>
+            <a id="paperAlmond5" href="https://doi.org/10.1007/s10681-005-9009-z" target="blank">López M, Vargas FJ, Batlle I. (2006). Self-(in)compatibility almond genotypes: a review. Euphytica; 150: 1–16.</a>
+            <p></p>
+            <a id="paperAlmond6" href="https://doi.org/10.1111/j.1439-0523.2008.01421.x" target="blank">Marchese, A., Bošković, R. I., Martínez‐García, P. J., & Tobutt, K. R. (2008). The origin of the self‐compatible almond ‘Supernova’. Plant breeding ; 127(1), 105-107.</a>
+            <p></p>
+            <a id="paperAlmond7" href="https://doi.org/10.21273/HORTSCI.49.4.396" target="blank">Gasic, K., & Preece, J. E. (2014). Register of new fruit and nut cultivars list 47. HortScience, 49(4), 396-421.</a>
+            <p></p>
+            <a id="paperAlmond8" href="https://doi.org/10.1038/s41438-020-00444-4" target="blank">Pérez de Los Cobos, F., Martínez-García, P. J., Romero, A., Miarnau, X., Eduardo, I., Howad, W., ... & Batlle, I. (2021). Pedigree analysis of 220 almond genotypes reveals two world mainstream breeding lines based on only three different cultivars. Horticulture research, 8.</a><br>
+            </p>
+            </div>
+            <div id="repositiories">
+            <p><strong>Public fruit crops databases & literature used for data extraction:</strong></p>
+                <a id="repository4" href="https://aida-itea.org/aida-itea/files/itea/revistas/1999/95V-2/95V-2_01.pdf" target="blank">Información Técnica Económica Agraria (ITEA), 1999;</a>
+                <br><a id="repository5" href="https://www.irta.cat/es/produccion-vegetal/fruta-seca-y-olivicultura/servicios/?tags_input[]=1040" target="blank">Institute of Agrifood Research and Technology (IRTA), 2023;</a>
+                <br><a id="repository2" href="https://www.fruitandnutlist.org/" target="blank">Fruits and Nuts Cultivar Database (FNCD), 2023</a>
+                <br>
+                <p></p>
+                <a href="https://doi.org/10.21273/HORTSCI.11.3.271a" target="blank">Spiegel-Roy, P., & Kochba, J. (1976). ‘Dagan’ Almond1. HortScience, 11(3), 271-271;</a>
+                <p></p><a href="https://aida-itea.org/aida-itea/files/itea/revistas/1999/95V-2/95V-2_01.pdf" target="blank">Felipe, A. J. (1999). Blanquerna, Cambra y Felisia: Tres nuevos cultivares autógamos de almendro. ITEA. Producción vegetal, 95(2), 111-117;</a>
+                <p></p><a href="https://doi.org/10.21273/HORTSCI.41.6.1502" target="blank">Holland, D., Bar-Ya'akov, I., Hatib, K., Albert, T., Mani, Y. I., & Spiegel-Roy, P. (2006). Shefa'almond. HortScience, 41(6), 1502-1503;</a>
+                <p></p><a href="https://doi.org/10.21273/HORTSCI.42.3.704" target="blank">Socias i Company, R. S., & Felipe, A. J. (2007). ‘Belona’ and ‘Soleta’ Almonds. HortScience, 42(3), 704-706;</a>
+                <p></p><a href="https://doi.org/10.17660/ActaHortic.2009.814.24" target="blank">Dicenta, F., Ortega, E., Martínez-Gómez, P., Sánchez-Pérez, R., Gambin, M., & Egea, J. (2007, September). Penta and Tardona: two new extra-late flowering self-compatible almond cultivars. In XII EUCARPIA Symposium on Fruit Breeding and Genetics 814 (pp. 189-192);</a>
+                <p></p><a href="https://doi.org/10.21273/HORTSCI.43.7.2240" target="blank">Socias i Company, R., Kodad, O., Alonso, J. M., & Felipe, A. J. (2008). ‘Mardía’ almond. HortScience, 43(7), 2240-2242;</a>
+                <p></p><a href="https://citarea.cita-aragon.es/citarea/handle/10532/3582" target="blank">Socias i Company, R., Alonso, J. M., Kodad, O., & Ansón, J. M. (2016). 'Vialfas', a new late blooming almond cultivar. Options Méditerranéennes. Série A, Séminaires Méditerranéens, (119), 123-125.</a>
+            </p>
+            </div>
+         </div>
+    <div class="expl" id="expl-grape">
+            <p>Grapevine pedigree visualization</p>
+            <div id="ped-data">
+            <p><strong>Literature used for the graph construction:</strong></p>
+            <a href="https://doi.org/10.1007/s00122-010-1411-9" target="blank">Cipriani, G., Spadotto, A., Jurman, I., Di Gaspero, G., Crespan, M., Meneghetti, S., ... & Testolin, R. (2010). The SSR-based molecular profile of 1005 grapevine (Vitis vinifera L.) accessions uncovers new synonymy and parentages, and reveals a large admixture amongst varieties of different geographic origin. Theoretical and Applied Genetics, 121, 1569-1585.</a>   
+            <p></p>
+              <a href="https://doi.org/10.1007/s00122-012-1988-2" target="blank">Lacombe, T., Boursiquot, J. M., Laucou, V., Di Vecchi-Staraz, M., Péros, J. P., & This, P. (2013). Large-scale parentage analysis in an extended set of grapevine cultivars (Vitis vinifera L.). Theoretical and Applied Genetics, 126, 401-414.</a>   
+            <p></p>
+              <a href="https://doi.org/10.1016/j.scienta.2017.02.044" target="blank">Raimondi, S., Carlomagno, A., Ruffa, P., Oglietti, S., Novello, V., & Schneider, A. (2017). Pedigree reconstruction of wine and table grape crossbreeds created in Italy by Giovanni Dalmasso. Scientia Horticulturae, 219, 125-130.</a>
+            <p><a href="https://doi.org/10.1371/journal.pone.0192540" target="blank">Laucou, V., Launay, A., Bacilieri, R., Lacombe, T., Adam-Blondon, A. F., Berard, A., ... & Boursiquot, J. M. (2018). Extended diversity analysis of cultivated grapevine Vitis vinifera with 10K genome-wide SNPs. PloS one, 13(2), e0192540;</a> 
+                <br><p></p>
+              <a href="https://doi.org/10.3390/plants10122755" target="blank">Augusto, D., Ibáñez, J., Pinto-Sintra, A. L., Falco, V., Leal, F., Martínez-Zapater, J. M., ... & Castro, I. (2021). Grapevine diversity and genetic relationships in northeast Portugal old vineyards. Plants, 10(12), 2755.</a>
+              <p></p>
+              <a href="https://doi.org/10.3389/fpls.2020.605934" target="blank">D’Onofrio, C., Tumino, G., Gardiman, M., Crespan, M., Bignami, C., De Palma, L., ... & Terzi, V. (2021). Parentage atlas of Italian grapevine varieties as inferred from SNP genotyping. Frontiers in Plant Science, 11, 605934</a>
+              <p></p>
+              <a href="https://link.springer.com/article/10.1007/s10681-023-03235-9#Sec20" target="blank">Bettinelli, P., Nicolini, D., Giovannini, O., Stefanini, M., Hausmann, L., & Vezzulli, S. (2023). Breeding for black rot resistance in grapevine: advanced approaches for germplasm screening. Euphytica, 219(11), 113.</a>
+            </p>
+            </div>
+            <div id="repositiories">
+            <p><strong>Public fruit crops databases & literature used for data extraction:</strong></p>
+            
+            <a href="https://link.springer.com/article/10.1007/s10681-023-03235-9#Sec20" target="blank">Bettinelli, P., Nicolini, D., Giovannini, O., Stefanini, M., Hausmann, L., & Vezzulli, S. (2023). Breeding for black rot resistance in grapevine: advanced approaches for germplasm screening. Euphytica, 219(11), 113.</a>
+            <p></p>
+
+            <a id="repository3" href="https://www.vivc.de/" target="blank"><em>Vitis</em> International Variety Catalogue (<em>V</em>IVC), 2023</a><br>
+              </p>
+            </div>
+        </div>
+</div>
+    </div>
+    <div id="paper">
+        <p>For a more detailed explanation, visit "<a>Pradas, N., Jurado-Ruiz, F., Onielfa, C., Arús, P., and Aranzana, M.J. (2023). <em>PERSEUS: an interactive and intuitive web-based tool for pedigree visualization. [...].</em></a>"</p>
+        <a href=""><img src="" alt="Paper Picture"></a>
+    </div>
+    <div id="ext-ref">
+        <h3 id="h2-3">External References</h3>
+        <li class="ref"><a id="ref1"href="https://nodejs.org/es/" target="blank">OpenJS Foundation (2023). Node.js® open-source, cross-platform JavaScript runtime environment, version 17.4.0.</a></li>
+        <li class="ref"><a id="ref2"href="https://expressjs.com/" target="blank">OpenJS Foundation (2017). Express.js® web application framework, version 4.17.3.</a></li>
+        <li class="ref"><a id="ref3"href="https://www.mongodb.com/" target="blank">MongoDB (2023).</a></li>
+        <li class="ref"><a id="ref4"href="https://ieeexplore.ieee.org/abstract/document/6064996" target="blank">Bostock, M., et al. (2011) D³ data-driven documents. Transactions on Visualiza-tion and Computer Graphics, IEEE, 17(12), pp. 2301–2309.</a></li>
+        <li class="ref"><a id="ref5"href="https://ieeexplore.ieee.org/document/6703387" target="blank">Huang, H. and Dong, Z. (2013). Research on architecture and Query Performance Based on distributed graph database neo4j. 2013 3rd International Conference on Consumer Electronics, Communications and Networks. IEEE, pp. 533-536.</a></li>
+        <li class="ref"><a id="ref6"href="https://neo4j.com/" target="blank">Neo technology, Inc.Neo4j Home (2023).</a></li>
+        <li class="ref"><a id="ref7"href="http://www.python.org" target="blank">Python Software Foundation. (2023) Python Language Reference, version 2.7.</a></li>
+        <li class="ref"><a id="ref8"href="https://conference.scipy.org/proceedings/scipy2010/mckinney.html" target="blank">McKinney, W. (2010). Data Structures for Statistical Computing in Python. Proceedings of the  9th Python in Science Conference, pp. 56-61. </a></li>
+        <li class="ref"><a id="ref9"href="https://conference.scipy.org/proceedings/SciPy2008/paper_2/" target="blank">Aric A. Hagberg, et al.  (2008). Exploring network structure, dynamics, and function using NetworkX. Proceedings of the 7th Python in Science Confer-ence (SciPy2008), pp. 11–15.</a></li>
+
+    </div>
+    
+    <div id="fundingAndCollaborators">
+      <p class="followus">Supported by:</p>
+      <div id="fundingAndCollaborators">
+        <li class="severoOchoa"><a href="https://www.somma.es/" target="_blank"><img src="<%=severoOchoa.imageUrl%>" alt="<%=severoOchoa.name%>"></a></li>
+        <li class="ministerio"><a href="https://www.ciencia.gob.es/" target="_blank"><img src="<%=ministerio.imageUrl%>" alt="<%=ministerio.name%>"></a></li>
+        <li class="invite"><a href="https://www.h2020-invite.eu/" target="_blank"><img src="<%=invite.imageUrl%>" alt="<%=invite.name%>"></a></li>
+        <li class="freeClimb"><a href="https://primafreeclimb.com/" target="_blank"><img src="<%=freeClimb.imageUrl%>" alt="<%=freeClimb.name%>"></a></li>
+      </div>
+    </div>
+</section>
+<%- include('./shared/includes/footer', {chevronup, facebook, instagram, twitter, linkedin, crag, irta}) %>
+
+
+
+
+ 

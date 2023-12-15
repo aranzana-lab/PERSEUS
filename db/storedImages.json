@@ -1,0 +1,307 @@
+[{
+  "_id": {
+    "$oid": "6233797944c602d05039e6d5"
+  },
+  "imageName": "facebook",
+  "image": "facebook.svg"
+},{
+  "_id": {
+    "$oid": "6233798444c602d05039e6d6"
+  },
+  "imageName": "twitter",
+  "image": "twitter.svg"
+},{
+  "_id": {
+    "$oid": "6233798f44c602d05039e6d7"
+  },
+  "imageName": "instagram",
+  "image": "instagram.svg"
+},{
+  "_id": {
+    "$oid": "6233799944c602d05039e6d8"
+  },
+  "imageName": "graph",
+  "image": "graph.png"
+},{
+  "_id": {
+    "$oid": "623379a744c602d05039e6d9"
+  },
+  "imageName": "cragLogo",
+  "image": "crag_logo_just_leafpng.png"
+},{
+  "_id": {
+    "$oid": "623379ea44c602d05039e6da"
+  },
+  "imageName": "chevronUp",
+  "image": "chevron_up.png"
+},{
+  "_id": {
+    "$oid": "623379f544c602d05039e6db"
+  },
+  "imageName": "linkedIn",
+  "image": "linkedin.svg"
+},{
+  "_id": {
+    "$oid": "623379ff44c602d05039e6dc"
+  },
+  "imageName": "list",
+  "image": "list.svg"
+},{
+  "_id": {
+    "$oid": "62337a0944c602d05039e6dd"
+  },
+  "imageName": "irta",
+  "image": "Logo-IRTA.png"
+},{
+  "_id": {
+    "$oid": "62337a1244c602d05039e6de"
+  },
+  "imageName": "peach",
+  "image": "peach.png"
+},{
+  "_id": {
+    "$oid": "6234acd37f1725f06b582774"
+  },
+  "imageName": "graphPed",
+  "image": "graphPed.png"
+},{
+  "_id": {
+    "$oid": "6234ae65d2b92cbc4a9125dc"
+  },
+  "imageName": "threeDots",
+  "image": "threeDots.svg"
+},{
+  "_id": {
+    "$oid": "6234ae71d2b92cbc4a9125dd"
+  },
+  "imageName": "x",
+  "image": "x.svg"
+},{
+  "_id": {
+    "$oid": "6238afe8c43c9830258c5ea3"
+  },
+  "imageName": "cragLogoPng",
+  "image": "crag_logo_png.PNG"
+},{
+  "_id": {
+    "$oid": "623b3f30236d30427fd0018a"
+  },
+  "imageName": "videoIndex",
+  "image": "Graph.mp4"
+},{
+  "_id": {
+    "$oid": "623b97878bb2cf14b752cabe"
+  },
+  "imageName": "apple",
+  "image": "apple.png"
+},{
+  "_id": {
+    "$oid": "623b97938bb2cf14b752cabf"
+  },
+  "imageName": "pear",
+  "image": "pear.png"
+},{
+  "_id": {
+    "$oid": "623c81566fcfd3b706b5f377"
+  },
+  "imageName": "pere",
+  "image": "pere.jpg"
+},{
+  "_id": {
+    "$oid": "623c861a8a4fa9d4e6a5c72d"
+  },
+  "imageName": "fede",
+  "image": "fede.jpg"
+},{
+  "_id": {
+    "$oid": "623c864e8a4fa9d4e6a5c72e"
+  },
+  "imageName": "txosse",
+  "image": "txosse.jpg"
+},{
+  "_id": {
+    "$oid": "623c8fa0e0f1ac401da6f50a"
+  },
+  "imageName": "nicole",
+  "image": "Nicole Pradas Ferazzoli photograph.jpg"
+},{
+  "_id": {
+    "$oid": "623d8b0af426535cb8fd6c5b"
+  },
+  "imageName": "cragCentre",
+  "image": "cragCentre.jpg"
+},{
+  "_id": {
+    "$oid": "623d91f0e1c5c3bfa1071891"
+  },
+  "imageName": "exampleGraphPic",
+  "image": "exampleGraph.PNG"
+},{
+  "_id": {
+    "$oid": "6241d6cfa0418202e5a8a109"
+  },
+  "imageName": "avatar",
+  "image": "avatar.png"
+},{
+  "_id": {
+    "$oid": "6246ef49594713bae621f107"
+  },
+  "imageName": "scroll up",
+  "image": "chevron_up.png"
+},{
+  "_id": {
+    "$oid": "624bfb1a8f1f89c0bbc73e5b"
+  },
+  "imageName": "exampleGraphPic2",
+  "image": "exampleGraph2.PNG"
+},{
+  "_id": {
+    "$oid": "624bfeeff78987bda8db653d"
+  },
+  "imageName": "videoIndex2",
+  "image": "video Pedigree Web_fin.mp4"
+},{
+  "_id": {
+    "$oid": "628f81233fe2d3e69cf20e3e"
+  },
+  "imageName": "exampleGraphPic3",
+  "image": "exampleGraph3.PNG"
+},{
+  "_id": {
+    "$oid": "628f84a0b2d5864a5a9ee824"
+  },
+  "imageName": "test",
+  "image": "bandicam 2022-05-26 15-21-32-974.mp4"
+},{
+  "_id": {
+    "$oid": "628f84e636691aaa67cb01ac"
+  },
+  "imageName": "videoGraphFin",
+  "image": "bandicam 2022-05-26 15-37-43-229.mp4"
+},{
+  "_id": {
+    "$oid": "63eb665ad28cc3154fa163f1"
+  },
+  "imageName": "FreeClimb",
+  "image": "FreeClimb_png.png"
+},{
+  "_id": {
+    "$oid": "63eb6670d28cc3154fa163f2"
+  },
+  "imageName": "Ministerio_Ciencia",
+  "image": "Gobierno_ESP.png"
+},{
+  "_id": {
+    "$oid": "63eb6697d28cc3154fa163f3"
+  },
+  "imageName": "Invite",
+  "image": "Invite_png.png"
+},{
+  "_id": {
+    "$oid": "63eb66b3d28cc3154fa163f4"
+  },
+  "imageName": "Severo_Ochoa",
+  "image": "Excelencia_SeveroOchoa_png.png"
+},{
+  "_id": {
+    "$oid": "63ecef0c4e2f12bc0cefb6d5"
+  },
+  "imageName": "exampleGraphPicApple",
+  "image": "exampleGraphPersApple.PNG"
+},{
+  "_id": {
+    "$oid": "63ed0f9de2b8df2390014aae"
+  },
+  "imageName": "grapes",
+  "image": "grapes.png"
+},{
+  "_id": {
+    "$oid": "63ed0fa6e2b8df2390014aaf"
+  },
+  "imageName": "almond",
+  "image": "almond.png"
+},{
+  "_id": {
+    "$oid": "641dbdfd34e84543d4ecdc09"
+  },
+  "imageName": "carles",
+  "image": "carles.png"
+},{
+  "_id": {
+    "$oid": "646dffc7f74d9087f5813f37"
+  },
+  "imageName": "guide1",
+  "image": "Guide1.PNG"
+},{
+  "_id": {
+    "$oid": "646dffd6f74d9087f5813f38"
+  },
+  "imageName": "guide2",
+  "image": "Guide2.PNG"
+},{
+  "_id": {
+    "$oid": "646dffe1f74d9087f5813f39"
+  },
+  "imageName": "guide3",
+  "image": "Guide3.PNG"
+},{
+  "_id": {
+    "$oid": "646f77cd8498be5d99486c96"
+  },
+  "imageName": "homepageVideo",
+  "image": "HomepageMP4.mp4"
+},{
+  "_id": {
+    "$oid": "65525b27aef474bf959dfac6"
+  },
+  "imageName": "csv",
+  "image": "csv.png"
+},{
+  "_id": {
+    "$oid": "657731acc1b75cd94182ddf9"
+  },
+  "imageName": "Guide4",
+  "image": "Guide4_.PNG"
+},{
+  "_id": {
+    "$oid": "657735e29015c49623f95eeb"
+  },
+  "imageName": "Guide5",
+  "image": "Guide5_.PNG"
+},{
+  "_id": {
+    "$oid": "657737ea029b17f478bc2cbd"
+  },
+  "imageName": "Guide6",
+  "image": "Guide6_.PNG"
+},{
+  "_id": {
+    "$oid": "65773a1ad2a8a7ec629e32fd"
+  },
+  "imageName": "Guide8",
+  "image": "Guide8.PNG"
+},{
+  "_id": {
+    "$oid": "657746b217a1fcdd4df61e44"
+  },
+  "imageName": "Guide7_1",
+  "image": "Guide7_1.PNG"
+},{
+  "_id": {
+    "$oid": "65774a4acaa2b83c49b1109f"
+  },
+  "imageName": "Guide7",
+  "image": "Guide7_.PNG"
+},{
+  "_id": {
+    "$oid": "657761de17a1c630af53b83a"
+  },
+  "imageName": "GuideUser_video",
+  "image": "GuideUser_PERSEUS_Final.mp4"
+},{
+  "_id": {
+    "$oid": "657c1d03847f6a512e15b252"
+  },
+  "imageName": "upload_pedigrees_template",
+  "image": "upload_pedigrees_template.xlsx"
+}]

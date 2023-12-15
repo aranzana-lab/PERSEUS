@@ -1,0 +1,88 @@
+<%- include('./shared/includes/head', { pageTitle: 'PERSEUS: Discover Pedigree' }) %>
+  <link rel="stylesheet" href="/perseus/styles/logo.css">
+  <link rel="stylesheet" href="/perseus/styles/discover.css">
+  <script src="https://unpkg.com/neo4j-driver"></script>
+  <script type="text/javascript" src="/perseus/scripts/autocomplete.js" defer></script>
+  <script type="text/javascript" src="/perseus/scripts/show-search.js" defer></script>
+
+
+</head>
+  <body>
+  <%- include('./shared/includes/header', {graph, threeDots, x, facebook, instagram, twitter, linkedin}) %>
+<section id="main1">
+  <div id="search-species">
+    <form id="form-search-spec" action="/perseus/discover-species" method="POST" autocomplete="off">
+    <input type="hidden" name="_csrf" value="<%= locals.csrfToken %>">
+    <p id="title-species">Select species for visualization:</p>
+    <div id="search-species2">  
+    <select name="species" id="species-to-select" type="text" required>
+        <option value="">Species</option>
+        <option value="Peach_variant">Peach (Prunus persica)</option>
+        <option value="Apple_variant">Apple (Malus × domestica)</option>
+        <option value="Pear_variant">Pear (Pyrus genus)</option>
+        <option value="Almond_variant">Almond (Prunus dulcis)</option>
+        <option value="Grapevine_variant">Grapevine (Vitis vinifera)</option>
+      </select>
+      <div class="findSpecies">
+       <button class="btn-search3">Search</button>
+    </div>
+    </div>
+    </form>
+ </div>
+<div id="search-head">
+    <div id="search-head2" class="search-head2-notFound">
+  <div id="btn-search-place">
+    <button onclick="showAndHide()" class="btn-search">Look for a specific pedigree</button>
+    <div id="sectionSearch"> 
+      <form id="search-discover" action="/perseus/discover" method="POST" autocomplete="off">
+        <input type="hidden" name="_csrf" value="<%= locals.csrfToken %>">
+        <div class="findPedigree">
+          <input type="search" id="nameQuery" name="name" placeholder="Name of the cultivar..." type="text" required>
+        <div class="autocomplete">
+         <input type="hidden" name="namesPedigrees" id="namesPedigrees" value="<%=namesPedigree%>">
+        </div>  
+     </div>
+
+      <div class="findPedigree">
+        <span class="search-title2" data-hover="*This value refers to the number of generations you would like to see in the graph, starting from your searched cultivar.">
+          Number of distance jumps* </span>
+      <div id="number-distance" >
+       <input id="numberDistance" name="number" type="number" min="0" max="50" value="1" required>
+      </div>
+      </div>
+      <div class="findPedigree">
+       <button class="btn-search2">Search</button>
+      </div>
+      </form>
+    </div>
+  </div>
+  <p>or</p>
+  <div id="whole">
+  <a href="/perseus/species" class="whole">Look at the whole pedigree</a> 
+</div>
+</div>
+  <div id="lookedSearch">
+    <div class="lookedSearch">
+    <h3>Searched cultivar</h3>
+     <p id="searched-name"><%=newQuery.name%></p>
+    </div>
+   <div class="lookedSearch">
+    <h3>Number of distance jumps</h3>
+    <p id="searched-number"><%=newQuery.number%></p>
+   </div>
+  </div>
+</div>
+
+  <div id="not-found">
+      <p class="not-found">The cultivar you searched is not found.</p>
+      <p class="not-found">Please check your submitted name, or look for another cultivar. 
+        <br>
+        <br>In case you believe this could be a server error, please contact us.</p>
+    </div>
+
+</section>
+
+
+<%- include('./shared/includes/footer', {chevronup, facebook, instagram, twitter, linkedin, crag, irta}) %>
+
+

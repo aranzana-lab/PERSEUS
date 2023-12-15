@@ -1,0 +1,501 @@
+/*/*INDEX PAGE*/
+
+/*Video intro*/
+#index-video {
+  width: 100%;
+  height: auto;
+  z-index: -1000;
+  position: relative;
+  top: -9.5rem;
+  transition: 0.5s;
+}
+
+/*Main*/
+main {
+  justify-content: center;
+  align-items: center;
+}
+
+#main1 {
+  margin-top: 0;
+  width: 100%;
+}
+
+.titlemain {
+  margin: 0;
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  font-weight: bolder;
+  font-size: 8rem;
+}
+
+.subtitle {
+  width: 100%;
+  text-align: center;
+  margin-top: 0;
+  font-size: 3rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+/*Summary of the project*/
+.project-summary {
+  text-align: center;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  padding-bottom: 1rem;
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+/*Pedigree avilable*/
+.pedigrees,
+#future-pedigrees {
+  display: grid;
+  padding: 2rem 4rem;
+  gap: 1rem;
+  justify-content: center;
+  text-align: justify;
+  font-size: 1.3rem;
+}
+
+.pedigrees li,
+#future-pedigrees li {
+  text-decoration: none;
+  list-style: none;
+}
+
+.peach-summary {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  text-align: center;
+}
+.peach-word {
+  color: var(--color-orange-400);
+}
+
+.peach-access {
+  display: grid;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+}
+
+.peach-access p {
+  margin-top: 2rem;
+}
+
+.peach-access form {
+  float: left;
+}
+#pedigreeFruits {
+  display: flex;
+}
+
+#pedigreeFruits button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  justify-content: center;
+}
+#pedigreeFruits p,
+#btn-species {
+  font-weight: bold;
+  color: var(--color-grey-700);
+  background-color: var(--color-grey-50);
+  border-radius: var(--border-radius-medium);
+  box-shadow: var(--shadow-medium);
+  text-align: center;
+  margin: 0;
+}
+
+#btn-species {
+  display: flex;
+  width: 100%;
+  height: 1.5rem;
+  border: none;
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+#btn-species:active,
+#btn-species:hover {
+  background-color: var(--color-green-400);
+}
+
+.peach-access2 {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+  padding: 2rem 8rem 0rem 8rem;
+  gap: 2rem;
+}
+
+.perseus-word {
+  font-style: italic;
+}
+.image {
+  width: 10rem;
+  height: auto;
+  transition: 0.3s;
+  padding-bottom: 0.5rem;
+}
+
+.sign-btn a:active,
+.sign-btn a:hover {
+  color: var(--color-green-700);
+}
+
+.peach-access a {
+  color: var(--color-grey-900);
+}
+
+.peach-access a:active a:hover {
+  color: var(--color-green-400);
+}
+
+/*Papers pedigrees*/
+
+.f-pedigree {
+  margin: 0rem;
+  font-size: 1.2rem;
+  justify-items: flex-start;
+}
+
+.f-pedigree p {
+  margin: 0;
+}
+
+.expl,
+.grape-expl {
+  font-size: 0.8rem;
+  height: auto;
+  padding-top: 1rem;
+  justify-content: center;
+  position: relative;
+  z-index: 1000;
+}
+
+.expl p,
+.grape-expl p {
+  margin: 0rem;
+  display: list-item;
+  justify-content: center;
+  padding: 0rem 0.5rem 0rem 0.5rem;
+  margin: 0;
+  display: none;
+}
+
+.f-img:active,
+.f-img:hover .expl p {
+  display: block;
+}
+
+.f-img:active,
+.f-img:hover .grape-expl p {
+  display: block;
+}
+
+.expl a:hover,
+.grape-expl a:hover {
+  color: var(--color-blue-400);
+}
+
+#name-species-latin {
+  padding-bottom: 3rem;
+}
+
+#peach-pedigree p:hover,
+#peach-pedigree p:active,
+#apple-pedigree p:hover,
+#apple-pedigree p:active,
+#pear-pedigree p:hover,
+#pear-pedigree p:active,
+#almond-pedigree p:hover,
+#almond-pedigree p:active,
+#grape-pedigree p:hover,
+#grape-pedigree p:active {
+  background-color: var(--color-green-400);
+}
+
+/*About the project*/
+#about-project {
+  justify-content: space-around;
+  width: 100%;
+  margin: auto;
+  margin-bottom: 4rem;
+  padding: 2rem 6rem;
+  border-radius: var(--border-radius-medium);
+  box-shadow: var(--shadow-medium);
+  background-color: var(--color-grey-50);
+}
+
+.project-more {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+.project-more2 {
+  list-style: none;
+  text-align: center;
+  transition: transform 0.2s ease-out;
+}
+.project-more2:hover {
+  transform: scale(1.05);
+}
+
+.project-btn {
+  padding: 1.5rem 1rem;
+  width: 50%;
+  cursor: pointer;
+  border-radius: var(--border-radius-big);
+  border-width: 0rem;
+  border-color: var(--color-grey-900);
+  box-shadow: var(--shadow-medium);
+  font-size: 1.5rem;
+  background-color: var(--color-grey-200);
+}
+
+.project-btn:active,
+.project-btn:hover {
+  background-color: var(--color-green-400);
+}
+
+.project-btn a,
+#group-more a,
+#contact-more a {
+  color: var(--color-grey-900);
+}
+
+/*About us*/
+#about-us {
+  background-color: var(--color-orange-50);
+  padding-top: 1rem;
+  padding-bottom: 0.05rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-radius: var(--border-radius-medium);
+  box-shadow: var(--shadow-medium);
+}
+h2 {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.about-summary {
+  text-align: center;
+  padding: 0.5rem;
+}
+
+#group-more {
+  margin-bottom: 3rem;
+}
+
+/*Contact*/
+#contact {
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+  margin-bottom: 2rem;
+}
+
+.contact {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/*Buttons*/
+.btn_per {
+  align-items: center;
+  cursor: pointer;
+  font: inherit;
+  padding: var(--space-2) var(--space-6);
+  background-color: var(--color-grey-200);
+  color: var(--color-grey-700);
+  border-radius: var(--border-radius-big);
+  border-color: var(--color-grey-350);
+  border: none;
+  box-shadow: var(--shadow-medium);
+  display: flex;
+  margin: auto;
+}
+
+.btn_per:hover,
+.btn_per:active {
+  background-color: var(--color-green-400);
+}
+
+/*Support*/
+#fundingAndCollaborators:nth-of-type(1) {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  width: 100%;
+  justify-items: center;
+  padding-top: 0.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--color-grey-200);
+}
+
+#fundingAndCollaborators p {
+  border-top: 1px solid var(--color-grey-200);
+  grid-column: 1 / span 4;
+  padding: 2rem 1rem 0rem 2rem;
+  justify-content: flex-start;
+}
+
+#fundingAndCollaborators img {
+  padding: 0.3rem;
+  width: auto;
+  height: 4.5rem;
+  cursor: pointer;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: 1s;
+  /* filter: invert(0.2) brightness(0.5); */
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+#fundingAndCollaborators img:active,
+#fundingAndCollaborators img:hover {
+  transition: 1s;
+  filter: invert(0) brightness(1);
+  opacity: 1;
+}
+
+/*Max Width*/
+@media (min-width: 72rem) {
+  #index-video {
+    padding-left: 10rem;
+    padding-right: 10rem;
+    background-color: var(--color-grey-900);
+  }
+}
+
+@media (max-width: 62rem) {
+  .image {
+    width: 8rem;
+  }
+  #pedigreeFruits {
+    gap: 0.5rem;
+    justify-content: space-around;
+  }
+  #index-video {
+    top: -1rem;
+  }
+}
+
+@media (max-width: 54rem) {
+  .project-btn {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 48rem) {
+  #about-project {
+    padding: 1rem 3rem;
+  }
+
+  .project-more {
+    gap: 0.5rem;
+  }
+
+  .project-btn {
+    width: 80%;
+  }
+
+  .pedigrees,
+  #future-pedigrees {
+    padding: 1rem 1rem;
+  }
+  .titlemain {
+    font-size: 5rem;
+  }
+
+  .btn_per a {
+    font-size: 1.1rem;
+  }
+
+  #fundingAndCollaborators img {
+    height: 3rem;
+  }
+  #pedigreeFruits {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: auto;
+    justify-items: center;
+  }
+  .expl {
+    width: auto;
+    height: auto;
+  }
+}
+
+@media (max-width: 40rem) {
+  #index-video {
+    top: 0rem;
+  }
+  .titlemain {
+    font-size: 4rem;
+  }
+
+  .subtitle {
+    font-size: 2.5rem;
+  }
+  .project-summary {
+    padding: 1rem 1rem;
+  }
+
+  .peach-access {
+    gap: 0.8rem;
+  }
+
+  .peach-access2 {
+    padding: 2rem 2rem 0rem 2rem;
+  }
+
+  .peach-access2,
+  .btn-per,
+  .project-btn {
+    font-size: 1rem;
+  }
+
+  .pedigrees {
+    gap: 0.2rem;
+    margin: auto;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .image {
+    width: 6rem;
+  }
+
+  #pedigreeFruits {
+    gap: 0rem;
+    justify-content: center;
+  }
+
+  #pedigreeFruits p {
+    font-size: 0.8rem;
+  }
+
+  .project-summary,
+  .peach-summary,
+  .about-summary {
+    width: auto;
+    font-size: 1rem;
+  }
+
+  @media (max-width: 30rem) {
+    #fundingAndCollaborators:nth-of-type(1) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}

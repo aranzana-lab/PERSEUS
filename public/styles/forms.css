@@ -1,0 +1,53 @@
+/*/*FORMS*/
+
+hr {
+  margin: var(--space-6);
+}
+
+#form-general {
+  margin-top: 6rem;
+}
+
+input,
+#inp,
+#image,
+select {
+  display: block;
+  width: 99%;
+  font-size: larger;
+  margin: var(--space-1);
+  padding: 1rem;
+  border-radius: var(--border-radius-small);
+  border-color: var(--color-grey-100);
+  border-width: 0.01rem;
+  font-family: inherit;
+  background-color: var(--color-primary-500-white);
+  color: var(--color-grey-600);
+  border-radius: var(--border-radius-big);
+  text-align: left;
+  box-shadow: var(--shadow-medium);
+  position: relative;
+  font-weight: 300;
+}
+
+#parag,
+#image_user {
+  text-align: justify;
+}
+
+#parag_2 {
+  text-align: center;
+}
+
+.titles_only_forgot {
+  padding-top: 3rem;
+}
+
+/*For Forgot Password*/
+#forgotpassword {
+  width: 90%;
+  max-width: 50rem;
+  margin: auto;
+  text-align: center;
+  color: var(--color-blue-400);
+}

@@ -1,0 +1,148 @@
+/*CONTACT PAGE*/
+p {
+  text-align: center;
+}
+
+#contact-page {
+  margin: 5rem 3rem 5rem 3rem;
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  font-weight: 800;
+}
+
+#send-us {
+  background-color: var(--color-orange-50);
+  margin-bottom: 0;
+  padding-top: 2rem;
+}
+
+#name-paper {
+  padding: 2rem 3rem 2rem 3rem;
+}
+
+#name-paper a {
+  color: Var(--color-grey-900);
+}
+
+#contact-em {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  gap: 3rem;
+  padding: 2rem 12rem;
+  background-color: var(--color-orange-50);
+  margin-bottom: 4rem;
+  transition: 0.3s;
+}
+
+#published-paper {
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+/*Emails*/
+#emails {
+  display: grid;
+  list-style: none;
+  grid-template-columns: 1fr 1fr;
+  align-content: space-evenly;
+  align-items: center;
+}
+/* 
+li {
+  padding-bottom: 2rem;
+} */
+
+/*Persons*/
+.image {
+  text-align: center;
+}
+.image img {
+  width: 10rem;
+  filter: grayscale(90%);
+  border-radius: var(--border-radius-extrabig);
+  transition: 0.3s;
+}
+
+.email {
+  padding-left: 1rem;
+  border-radius: var(--color-grey-900);
+  border-width: 0.5rem;
+  justify-content: center;
+}
+
+.name-pers-email {
+  font-weight: bold;
+  font-size: 1.4rem;
+  margin-bottom: 0;
+  margin-top: 1rem;
+}
+
+.position-email {
+  margin-top: 0;
+  font-style: italic;
+}
+
+.email-dir {
+  font-size: 1.1rem;
+  font-style: italic;
+}
+
+strong {
+  font-style: italic;
+}
+
+/*Max Widths*/
+@media (max-width: 72rem) {
+  #contact-page {
+    margin: 6rem 3rem 3rem 3rem;
+  }
+
+  #contact-em {
+    gap: 1rem;
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
+  .image img {
+    width: 8rem;
+  }
+}
+
+@media (max-width: 64rem) {
+  #contact-page {
+    margin: 12rem 3rem 3rem 3rem;
+  }
+}
+
+@media (max-width: 60rem) {
+  #emails {
+    display: grid;
+    list-style: none;
+    grid-template-columns: 1fr;
+  }
+  li {
+    padding-bottom: 0.8rem;
+  }
+  .name-pers-email {
+    margin-top: 0rem;
+  }
+  .email {
+    padding-bottom: 2rem;
+  }
+  #contact-em {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+
+@media (max-width: 48rem) {
+  #contact-em {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    grid-template-columns: 1fr;
+  }
+  p {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}

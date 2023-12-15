@@ -1,0 +1,276 @@
+<%- include('./shared/includes/head', { pageTitle: 'PERSEUS: Discover Pedigree' }) %>
+  <link rel="stylesheet" href="/perseus/styles/logo.css">
+  <link rel="stylesheet" href="/perseus/styles/discover.css">
+  <script src="https://unpkg.com/neo4j-driver"></script>
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+<script src="https://unpkg.com/d3-simple-slider"></script>
+  <script src="https://cdn.jsdelivr.net/npm/d3-hierarchy@3"></script>
+  <!-- GRAPH TO IMAGE SCRIPTS -->
+  <script src="https://cdn.rawgit.com/eligrey/FileSaver.js/e9d941381475b5df8b7d7691013401e171014e89/FileSaver.min.js"></script>
+  <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+   <script type="text/javascript" src="/perseus/scripts/graph-to-image.js" defer></script>
+  <script type="text/javascript" src="/perseus/scripts/shared-d3.js" defer></script>
+  <script type="text/javascript" src="/perseus/scripts/2Dgraph-discover-specific-d3.js" defer></script>
+  <script type="text/javascript" src="/perseus/scripts/graph-hierarchical-d3.js" defer></script>
+  <script type="text/javascript" src="/perseus/scripts/autocomplete.js" defer></script>
+  <script type="text/javascript" src="/perseus/scripts/show-search.js" defer></script>
+
+</head>
+  <body>
+  <%- include('./shared/includes/header', {graph, threeDots, x, facebook, instagram, twitter, linkedin}) %>
+<section id="main1">
+  <div id="search-species">
+    <form id="form-search-spec" action="/perseus/discover-species" method="POST" autocomplete="off">
+    <input type="hidden" name="_csrf" value="<%= locals.csrfToken %>">
+    <p id="title-species">Select species for visualization:</p>
+    <div id="search-species2">  
+    <select name="species" id="species-to-select" type="text" required>
+        <option value="">Species</option>
+        <option value="Peach_variant">Peach (Prunus persica)</option>
+        <option value="Apple_variant">Apple (Malus × domestica)</option>
+        <option value="Pear_variant">Pear (Pyrus genus)</option>
+        <option value="Almond_variant">Almond (Prunus dulcis)</option>
+        <option value="Grapevine_variant">Grapevine (Vitis vinifera)</option>
+      </select>
+      <div class="findSpecies">
+       <button class="btn-search3">Search</button>
+    </div>
+    </div>
+    </form>
+  </div>
+
+ <div id="search-head">
+ <div id="search-head2">
+  <div id="btn-search-place-spec">
+  <button onclick="showAndHide(this.id)" class="btn-search" id="btnLook">Look for a specific pedigree</button>
+ </div>
+  <p>or</p>
+  <div id="whole">
+  <a href="/perseus/species" class="whole">Look at the whole pedigree</a> 
+ </div>
+ </div>
+  <div id="lookedSearch">
+    <h3>Searched cultivar</h3>
+    <h3>Number of distance jumps</h3>
+    <div id="searchedName">
+     <p id="searched-name"><%=newQuery.name%></p>
+     <p id="colourSearch"></p>
+     </div>
+    <p id="searched-number"><%=newQuery.number%></p>
+  </div>
+ </div>
+ <div id="sectionSearch">
+  <form id="search" action="/perseus/discover" method="POST">
+   <input type="hidden" name="_csrf" value="<%= locals.csrfToken %>">
+    <div class="findPedigree">
+      <input type="search" id="nameQuery" name="name" placeholder="Name of the cultivar..." type="text" required>
+       <div class="autocomplete">
+         <input type="hidden" name="namesPedigrees" id="namesPedigrees" value="<%=namesPedigree%>">
+        </div>
+     </div>
+
+    <div class="findPedigree">
+    <span class="search-title2" data-hover="*This value refers to the number of generations you would like to see in the graph, starting from your searched cultivar.">
+      Number of distance jumps*
+    </span>
+        <div id="number-distance" >
+      <input id="numberDistance" name="number" type="number" min="0" max="50" value="1" required>
+    </div>
+    </div>
+    <div class="findPedigree">
+    <button class="btn-search2">Search</button>
+    </div>
+  </form>
+   </div>
+  <div id="select-traits"></div>
+
+  <div id="dropdown-options">
+    <div id="btn-search-place-spec" class="btn-hier">
+      <button onclick="showAndHide2()" id="hier"class="btn-search-hier">Change to hierarchical view</button>
+    </div>
+
+   <div id="btn-search-place">
+    <button onclick="showAndHide(this.id)" class="btn-search" id="btnInd">Search an individual</button>
+    <div id="sectionSearch3">
+      <div id="colourAccession">
+        <div id="titleSelectCol"><p>Search one or more individuals:</p>
+          <span data-hover="Select one or more individuals and find them on the pedigree. The individuals will be automatically coloured.">
+          &#128712;</span>
+        </div>
+        <div id="alreadySelectedInd"></div>
+        <select name="searchInd" id="searchInd" autocomplete="off">
+          <option value="">Individual...</option>
+        </select>
+        <div id="alreadySelectedInd-hier"></div>
+        <select name="searchInd-hier" id="searchInd-hier" autocomplete="off">
+          <option value="">Individual...</option>
+        </select>
+      </div>
+    </div>
+   </div>
+  <div id="btn-search-place">
+    <button onclick="showAndHide(this.id)" class="btn-search" id="btnCol">Colour by trait</button>
+    <div id="sectionSearch4">
+      <div id="select-by-desired-traits">
+        <select id="properties-to-select" aria-label="property_select" name="Trait">
+          <option value="">Trait</option>
+        </select>
+      <div id="indProperties"></div>
+        <span class="spanName" data-hover='Colour the nodes by traits of interest.
+        The data represented in PERSEUS was gathered and parsed from the literature and historic data. 
+        For more information about the literature used, please go to "About the project".'>
+        &#128712;</span>
+      </div>
+      <div id="select-by-desired-traits-2">
+        <select id="properties-to-select-2" aria-label="property_select" name="Trait">
+          <option value="">Trait</option>
+        </select>
+      <div id="indProperties-2"></div>
+        <span class="spanName" data-hover='Colour the nodes by traits of interest.
+        The data represented in PERSEUS was gathered and parsed from the literature and historic data. 
+        For more information about the literature used, please go to "About the project".'>
+        &#128712;</span>
+      </div>
+    </div>
+  </div>
+
+  <div id="btn-search-place">
+    <button onclick="showAndHide(this.id)" class="btn-search" id="btnPers">Personalize the visualization</button>
+    <div id="sectionSearch5">
+      <div id="custom-2d">
+        <div id="customize-pedigree-search">
+          <span data-hover='Use these options to modify the pedigree visualization to your liking.
+        &#8194;· For background: change the background colour of the directed graph.
+        &#8194;· For Nodes: change the nodes size and colour, as well as the colour of the nodes text. 
+        &#8194;· For Links: change the size and colour of the edges, as well as the links text colour.
+        &#8194;· For Highlighting Selection: change the colour when selecting nodes and links.
+        
+        For more information about the literature used, please go to "About the project".
+        '>
+        &#128712;</span>
+        </div>
+      </div>
+      <div id="custom-hier">
+        <div id="customize-pedigree-search-hier">
+          <span data-hover='Use these options to modify the pedigree visualization to your liking.
+        &#8194;· For background: change the background colour of the directed graph.
+        &#8194;· For Nodes: change the nodes size and colour, as well as the colour of the nodes text. 
+        &#8194;· For Links: change the size and colour of the edges, as well as the links text colour.
+        &#8194;· For Highlighting Selection: change the colour when selecting nodes and links.
+        
+        For more information about the literature used, please go to "About the project".
+        '>
+        &#128712;</span>
+        </div>
+     </div>
+    </div>
+  </div>
+  </div>
+
+  <div id="upload-search-place">
+  <p id="title-upload-data">Upload your own pedigrees to the visualization:</p>
+  <span class="search-title3" data-hover='&#128712;This section allows you to upload own pedigree data to the already existent pedigree dataset. Submit your data in CSV (.csv) format following the "upload pedigrees template" document, conveniently located at the right-end of the page.
+  When submited, your uploaded data will automatically be added to the directed graph network and it can also be checked by clicking at the "See your uploaded data" tab.
+  New nodes appear in green colour. If an individual from the user data has the same name as another accession/cultivar already available on the dataset, the new relationships will be added to the already existent node. 
+  In case inconsistent relationships occur when uploading the data, these links will appear in red colouring.
+
+  For more information, please read the user guide available in "About The Project".
+  '>
+         &#128712; </span>
+  </div>
+  <div id="upload-doc">
+    <div id="upload-region">
+    <form id="formUpload" action="/perseus/discover" method="POST" autocomplete="off" >
+      <input type="file" value="<%= locals.csrfToken %>" name="fileUploadedUser" id="fileUploadUser" accept=".csv" multiple>
+      <input type="submit" value="Submit">
+    </form>
+    <button class="btn-search" id="seeUploadData" onclick="showAndHide(this.id)">See your uploaded data <i class="fa fa-chevron-down"></i></button>
+    </div>
+    <div id="download-template">
+      <p id="title-template">Download <strong><em>upload pedigrees template</em>:</strong></p>
+      <a href="<%=template_xlsx.imageUrl%>" target="_blank"><img src="<%=csv.imageUrl%>" alt="<%=csv.name%>" id="csv_image"></a>
+    </div>
+  </div>
+  <div id="table-user">
+  </div>
+  
+  <svg id="graph-2d" width="800" height="800"></svg>
+  <svg id="graph-hierarchical"  width="800" height="800"></svg>
+
+  <div id="speciesLook">
+    <p id="titleSpecies">Searched species:</p>
+    <p id="species"><%=species%></p>
+    <p id="name-apple-latin" class="latinName"><em>(Malus</em> × <em>domestica)</em></p>
+    <em id="name-peach-latin" class="latinName">(Prunus persica)</em>
+    <p id="name-pear-latin" class="latinName">(<em>Pyrus </em>genus)</p>
+    <em id="name-almond-latin" class="latinName">(Prunus dulcis)</em>
+    <em id="name-grapevine-latin" class="latinName">(Vitis genus)</em>
+  </div>
+
+   <div id="papersLook">
+    <p id="titlePapers">Pedigree data - Literature:</p>
+    <div id="paperApple">
+      <a id="paperApple1" href="https://doi.org/10.1007/s001220050841" target="blank">Gianfranceschi <em> et al., </em>(1998);</a>
+      <br><a id="paperApple4" href="https://doi.org/10.1080/14620316.2007.11512227" target="blank">Ramos-Cabrer<em> et al., </em>(2007);</a>
+      <br><a id="paperApple2" href="https://doi.org/10.1007/s11032-010-9502-5" target="blank">Evans <em> et al., </em>(2011);</a>
+      <br><a id="paperApple3" href="https://doi.org/10.1007/s11032-014-0054-y" target="blank">Salvi <em> et al., </em>(2014);</a>
+      <br><a id="paperApple5" href="https://doi.org/10.1038/hortres.2017.3" target="blank">Howard<em> et al., </em>(2017);</a>
+      <br><a id="paperApple6" href="https://doi.org/10.1007/s11295-016-1087-7" target="blank">Larsen<em> et al., </em>(2017);</a>
+      <br><a id="paperApple7" href="https://doi.org/10.1007/s11032-017-0755-0" target="blank">van de Weg<em> et al., </em>(2018);</a>
+      <br><a id="paperApple8" href="https://doi.org/10.1371/journal.pone.0202405" target="blank">Ordidge <em> et al., </em>(2018);</a>
+      <br><a id="paperApple9" href="https://doi.org/10.1371/journal.pone.0210928" target="blank">Vanderzande <em> et al., </em>(2019);</a>
+      <br><a id="paperApple10" href="https://doi.org/10.1186/s12870-019-2171-6" target="blank">Muranty<em> et al., </em>(2020);</a>
+      <br><a id="paperApple11" href="https://doi.org/10.1016/j.scienta.2020.109599" target="blank">af Sätra<em> et al., </em>(2020);</a>
+      <br><a id="paperApple12" href="https://doi.org/10.1038/s41438-021-00637-5" target="blank">Howard<em> et al., </em>(2021);</a>
+      <br><a id="paperApple13" href="https://doi.org/10.1093/hr/uhab069" target="blank">Howard<em> et al., </em>(2022a);</a>
+      <br><a id="paperApple14" href="https://doi.org/10.1002/ppp3.10313" target="blank">Howard<em> et al., </em>(2022b);</a>
+      <br><a id="paperApple15" href="https://doi.org/10.21273/HORTSCI16354-21" target="blank">Luby<em> et al., </em>(2022);</a>
+      <br><a id="paperApple16" href="https://doi.org/10.3390/horticulturae9050575" target="blank">Gilpin<em> et al., </em>(2023)</a>
+   </div>
+   <div id="paperAlmond">
+    <a id="paperAlmond1" href="" target="blank">Stylianides (1977);</a>
+    <br><a id="paperAlmond2" href="" target="blank">Grasselly and Crossa-Raynaud (1980);</a>
+    <br><a id="paperAlmond3" href="" target="blank">Brooks and Olmo (1997);</a>
+    <br><a id="paperAlmond4" href="" target="blank">Felipe (2000);</a>
+    <br><a id="paperAlmond5" href="https://doi.org/10.1007/s10681-005-9009-z" target="blank">López<em> et al., </em>(2006);</a>
+    <br><a id="paperAlmond6" href="https://doi.org/10.1111/j.1439-0523.2008.01421.x" target="blank">Marchese<em> et al., </em>(2008);</a>
+    <br><a id="paperAlmond7" href="https://doi.org/10.21273/HORTSCI.49.4.396" target="blank">Gasic and Preece (2014);</a>
+    <br><a id="paperAlmond8" href="https://doi.org/10.1038/s41438-020-00444-4" target="blank">Pérez de los Cobos<em> et al., </em>(2021);</a>
+   </div>
+   <div id="paperGrapevine">
+    <a id="paperGrapevine1" href="https://doi.org/10.1007/s00122-010-1411-9" target="blank">Cipriani<em> et al., </em>(2010);</a>
+    <br><a id="paperGrapevine2" href="https://doi.org/10.1007/s00122-012-1988-2" target="blank">Lacombe<em> et al., </em>(2013);</a>
+    <br><a id="paperGrapevine3" href="https://doi.org/10.1016/j.scienta.2017.02.044" target="blank">Raimondi<em> et al., </em>(2017);</a>    
+    <br><a id="paperGrapevine4" href="https://doi.org/10.1371/journal.pone.0192540" target="blank">Laucou<em> et al., </em>(2018);</a> 
+    <br><a id="paperGrapevine5" href="https://doi.org/10.3390/plants10122755" target="blank">Augusto<em> et al., </em>(2021);</a> 
+    <br> <a id="paperGrapevine6" href="https://doi.org/10.3389/fpls.2020.605934" target="blank">D'Onofrio <em>et al., </em>(2021);</a>
+    <br><a id="paperGrapevine7" href="https://link.springer.com/article/10.1007/s10681-023-03235-9#Sec20" target="blank">Bettinelli<em> et al., </em>(2023)</a> 
+   </div>
+   <div id="paperPear">
+    <a id="paperPear1" href="https://doi.org/10.1007/s13580-012-0082-7" target="blank">Cho<em> et al., </em>(2012);</a>
+    <br><a id="paperPear2" href="https://doi.org/10.1534/g3.120.401327" target="blank">Montanari<em> et al., </em>(2020);</a>
+    <br><a id="paperPear3" href="https://doi.org/10.1007/s11295-020-01467-7" target="blank">Zurn<em> et al., </em>(2020)</a>
+   </div>
+   <div id="paperPeach">
+    <a id="paperPeach1" href="" target="blank">Okie (1998);</a> 
+    <br> <a id="paperPeach2" href="https://doi.org/10.1007/s00122-002-1128-5" target="blank">Aranzana<em> et al., </em>(2003);</a> 
+    <br> <a id="paperPeach3" href="https://doi.org/10.1007/s10722-004-0575-z" target="blank">Xu<em> et al., </em>(2006);</a> 
+    <br> <a id="paperPeach4" href="https://doi.org/10.1016/j.scienta.2008.10.008" target="blank">Cheng<em> et al., </em>(2009);</a> 
+    <br> <a id="paperPeach5" href="https://doi.org/10.1016/j.scienta.2010.05.015" target="blank">Xie<em> et al., </em>(2010);</a>
+    <br> <a id="paperPeach6" href="https://doi.org/10.21273/JASHS.137.2.114" target="blank">Sitther<em> et al., </em>(2012);</a> 
+    <br> <a id="paperPeach7" href="https://doi.org/10.1186/1471-2156-14-84" target="blank">Li<em> et al., </em>(2013);</a> 
+    <br> <a id="paperPeach8" href="https://doi.org/10.1371/journal.pone.0136803" target="blank">Micheletti<em> et al., </em>(2015)</a> 
+    <br> <a id="paperPeach9" href="https://doi.org/10.1007/s11032-015-0357-7" target="blank">Fresnedo-Ramírez<em> et al., </em>(2015);</a> 
+    <br> <a id="paperPeach10" href="https://doi.org/10.1371/journal.pone.0210928" target="blank">Vanderzande<em> et al., </em>(2019)</a> 
+   </div>
+  </div>
+
+  <div id="traits-info-intro"></div>
+  <div id="traits-info"></div>
+  <div id="downloadArea"></div>
+</section>
+
+
+<%- include('./shared/includes/footer', {chevronup, facebook, instagram, twitter, linkedin, crag, irta}) %>
+
+

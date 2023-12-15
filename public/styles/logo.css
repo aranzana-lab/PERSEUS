@@ -1,0 +1,47 @@
+/*Pedigree img icon*/
+#logo {
+  font-family: "Raleway", sans-serif;
+  font-weight: bold;
+  z-index: 1;
+}
+
+#logo_a {
+  display: flex;
+  position: relative;
+  align-items: center;
+  width: 30%;
+  padding-left: 2rem;
+}
+
+#logo .pedigree_img {
+  width: 85px;
+  height: 85px;
+  margin: auto;
+  image-rendering: optimizeQuality;
+}
+
+#logo .title {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--color-grey-100);
+  letter-spacing: 0.1rem;
+}
+
+#logo .title:hover,
+.title:active {
+  color: var(--color-orange-100);
+  transition: 0.3s;
+}
+
+@media screen and (max-width: 56rem) {
+  #logo .pedigree_img {
+    width: 70px;
+    height: 70px;
+    transition: 0.3s;
+  }
+
+  #logo .title {
+    font-size: 1.8rem;
+    transition: 0.3s;
+  }
+}
