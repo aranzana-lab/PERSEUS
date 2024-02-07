@@ -32,8 +32,8 @@
 <div id="search-head">
     <div id="search-head2" class="search-head2-notFound">
   <div id="btn-search-place">
-    <button onclick="showAndHide()" class="btn-search">Look for a specific pedigree</button>
-    <div id="sectionSearch"> 
+    <button onclick="showAndHide(this.id)" class="btn-search" id="btnLook">Look for a specific pedigree</button>
+  <div id="sectionSearch"> 
       <form id="search-discover" action="/perseus/discover" method="POST" autocomplete="off">
         <input type="hidden" name="_csrf" value="<%= locals.csrfToken %>">
         <div class="findPedigree">
